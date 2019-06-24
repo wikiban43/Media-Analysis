@@ -1,0 +1,90 @@
+{"nodes":
+[
+  {
+    "id": "1",
+    "label": "Wholesale and Retail Trade"
+  },
+  {
+    "id": "2",
+    "label": "Ministry of Finance"
+  },
+  {
+    "id": "3",
+    "label": "Ministry of Commerce and Industry"
+  },
+  {
+    "id": "4",
+    "label": "Ministry of Textiles"
+  },
+  {
+    "id": "5",
+    "label": "Ministry of Housing and Urban Affairs"
+  },
+  {
+    "id": "6",
+    "label": "Ministry of Home Affairs"
+  },
+  {
+    "id": "7",
+    "label": "Ministry of Agriculture and Farmers Welfare"
+  },
+  {
+    "id": "8",
+    "label": "Ministry of Human Resource Development"
+  },
+  {
+    "id": "9",
+    "label": "Ministry of Tourism"
+  }
+],
+"edges":[
+  {
+    "from": "1",
+    "to": "2",
+    "value": "50",
+    "label": "50"
+  },
+  {
+    "from": "1",
+    "to": "3",
+    "value": "47",
+    "label": "47"
+  },
+  {
+    "from": "1",
+    "to": "4",
+    "value": "21",
+    "label": "21"
+  },
+  {
+    "from": "1",
+    "to": "5",
+    "value": "37",
+    "label": "37"
+  },
+  {
+    "from": "1",
+    "to": "6",
+    "value": "20",
+    "label": "20"
+  },
+  {
+    "from": "1",
+    "to": "7",
+    "value": "12",
+    "label": "12"
+  },
+  {
+    "from": "1",
+    "to": "8",
+    "value": "15",
+    "label": "15"
+  },
+  {
+    "from": "1",
+    "to": "9",
+    "value": "23",
+    "label": "23"
+  }
+]
+}

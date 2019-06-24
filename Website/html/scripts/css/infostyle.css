@@ -1,0 +1,55 @@
+.right-info {
+    width: 100% !important;
+    border: 1px solid white !important;
+    border-radius: 5px;
+}
+
+.graph {
+    width: 100% !important;
+    border: 1px solid white !important;
+    border-radius: 5px;
+
+}
+
+.main {
+    margin-block-start: 3%;
+    border: 1px solid white !important;
+    border-radius: 5px;
+}
+
+.info {
+    width: 100% !important;
+    border: 1px solid white !important;
+    border-radius: 5px;
+}
+
+.custom-nav li:hover {
+    background: #b8ffcb;
+}
+
+.links-list li:hover {
+    background: #b8ffcb;
+}
+
+
+.links-left {
+
+    margin-block-start: 2%;
+    margin-block-end: 1%;
+    border-radius: 5px;
+
+}
+
+.links-left ul li a {
+    text-decoration: none;
+}
+
+.links-right ul li a {
+    text-decoration: none;
+}
+
+.links-right {
+    margin-block-start: 2%;
+    margin-block-end: 2%;
+
+}

@@ -1,0 +1,90 @@
+{"nodes":
+[
+  {
+    "id": "1",
+    "label": "Manufacturing Sector"
+  },
+  {
+    "id": "2",
+    "label": "Ministry of Finance"
+  },
+  {
+    "id": "3",
+    "label": "Ministry of Commerce and Industry"
+  },
+  {
+    "id": "4",
+    "label": "Ministry of Textiles"
+  },
+  {
+    "id": "5",
+    "label": "Ministry of Housing and Urban Affairs"
+  },
+  {
+    "id": "6",
+    "label": "Ministry of Home Affairs"
+  },
+  {
+    "id": "7",
+    "label": "Ministry of Agriculture and Farmers Welfare"
+  },
+  {
+    "id": "8",
+    "label": "Ministry of Human Resource Development"
+  },
+  {
+    "id": "9",
+    "label": "Ministry of Power"
+  }
+],
+"edges":[
+  {
+    "from": "1",
+    "to": "2",
+    "value": "94",
+    "label": "94"
+  },
+  {
+    "from": "1",
+    "to": "3",
+    "value": "88",
+    "label": "88"
+  },
+  {
+    "from": "1",
+    "to": "4",
+    "value": "55",
+    "label": "55"
+  },
+  {
+    "from": "1",
+    "to": "5",
+    "value": "44",
+    "label": "44"
+  },
+  {
+    "from": "1",
+    "to": "6",
+    "value": "45",
+    "label": "45"
+  },
+  {
+    "from": "1",
+    "to": "7",
+    "value": "47",
+    "label": "47"
+  },
+  {
+    "from": "1",
+    "to": "8",
+    "value": "32",
+    "label": "32"
+  },
+  {
+    "from": "1",
+    "to": "9",
+    "value": "29",
+    "label": "29"
+  }
+]
+}

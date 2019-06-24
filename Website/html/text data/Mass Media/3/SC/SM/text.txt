@@ -1,0 +1,12 @@
+<b>Examples in Farmers Protest depicting tweet sentiment.</b><br> 
+<br>
+<b>Positive</b>
+<br><b>1.</b> "RT @Nesenag: TN has an outstanding debt of 3.14 L cr &amp; waiving off cooperative loans will benefit 16L small farmers and will cost 5.8k cr,…".
+<br><b>2.</b> "Some people talk. We deliver. Some people call themselves Raitha Bandhu.We bring irrigation to parched fields, fill tanks, waive loans, do direct income transfer to farmers, give loans at 0% interest, build farm ponds, do crop insurance And we leave appreciation to people."
+<br><b>3.</b> "RT @CMofKarnataka: Ktaka Govt’s decision to waive farmer loans will benefit 22.27 Lakh farmers. Here are the details on who all will benefi…",
+
+<br><b>Negative</b>
+<br><b>1.</b> "Farmer commits suicide in the national capital in presence of 1000s of AAP/RSS volunteers.Didnt stop him Shame on #KisaanVirodhiNarendraModi"
+<br><b>2.</b> "RT @INCIndia: 601 farmers have committed suicide in Maharashtra in just 3 months, but the Govt doesn't seem to care."
+
+

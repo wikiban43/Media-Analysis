@@ -1,0 +1,7 @@
+<b>Examples on Farmers Protest articles in newspapers depicting positive and negative sentiment.</b>
+<br><br>
+<b>Positive</b><br>
+<b>1.</b> "The State unit of Aam Aadmi Party (AAP) has come out with a slew of attractive promises to the farming community in its special manifesto for farmers, which was released here on Sunday. Income security to farmers, setting aside 10 per cent of the budget for agriculture, an income commission, daytime electricity and solar pump sets are some of the highlights of the manifesto.The party is promising an income security system that will guarantee an annual income of Rs. 1 lakh to each farming household...."
+<br>
+<b>Negative</b><br>
+<b>1.</b> "Taking a serious view of the alleged lapses in enumeration of crop loss by the official machinery, the CPI (M) district secretary Pothineni Sudarsan Rao has demanded that the government order a re-survey of the crop loss suffered by farmers in last years cyclone in the district.Speaking at the partys district executive committee meeting held in the town on Thursday, Mr. Sudarsan Rao deplored that cotton and paddy crops in thousands of acres were extensively damaged due to natures fury in the district.Although, farmers suffered huge losses to the tune of Rs. 150 crore under the impact of a series of cyclones last year, the official machinery put the crop loss at a meagre Rs. 60 lakh, he deplored alleging that the entire enumeration process was carried out in a rhetoric manner....."

@@ -1,0 +1,534 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Corporate Government Interlocks</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="../scripts/css/nv.d3.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../scripts/css/interlocks.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+	<style>
+		body {
+			font-family: 'Montserrat', 'serif';
+			font-size: 14px;
+			overflow: auto;
+			color: #555555;
+			letter-spacing: 0.15px;
+			line-height: 1.5;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+	<script src="../scripts/js/nv.d3.js"></script>
+
+
+	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+	<style>
+
+		.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('../Images/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+	</style>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+		$(function () {
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+		});
+	</script>
+</head>
+
+<body>
+	<!-- <div class="loader"></div>-->
+	<script type="text/javascript">
+		$(window).load(function () {
+			$(".loader").fadeOut("slow");
+		})
+	</script>
+	<div id="header"></div>
+
+	<br>
+	<div class="container-fluid">
+		<div class="row">
+			
+			<div class="col-sm-6 text-left">
+				<h2 class="text-center" style="color: #05386b !important;">Corporate Government Interlocks </h2>
+				<div style="width: 100%">
+					<p style="margin-inline-end: 1%;margin-inline-start: 1%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 15px !important;">Corporate executives
+						who enter politics or government administration, or family members of public officials with links
+						to corporate organizations, are known to build an interlocking social network that becomes a power structure of
+						highly
+						influential entities. This power structure often leads to a bidirectional flow of favors between the corporations
+						and
+						political entities, and it can influence policy formulation or manifest itself in crony capitalism (or
+						corruption).
+						Such negative manifestations of corporate-government interlocks have been evident in India (for example, in 2G
+						scam,
+						where an interconnected group of politicians and corporate business-persons were accused of cronyism).
+					</p>
+					<p style="margin-inline-end: 1%;margin-inline-start: 1%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 15px !important;">In our study, we find
+						that the extent of corporate-government interlocks has increased over time in India. We report
+						our analyzes supporting this statement, and show some more results that depict the different kinds of interlocks
+						between
+						corporate and government entities.
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-3 text-left">
+
+				<div class="linkDeco">
+
+					<ul class="list-group links-list" style="width:100%;margin-block-start: 10%;">
+						<li class="list-group-item" style="background:white;color: #05386b !important;font-size:130%;border: 1px solid white; "
+						 data-toggle="modal" data-target="#sector" data-toggle="tooltip" title="Click to know more!">
+							<span style="font-family: 'Open Sans', 'serif';">Top Interlocked Sectors </button>
+							</span>
+						</li>
+						<li class="list-group-item">
+							<a href="../Pages/info.php?page=Manufacturing">Manufacturing</a>
+						</li>
+						<li class="list-group-item">
+							<a href="../Pages/info.php?page=Professional, Scientic and Technical Activities">Professional, Scientic and
+								Technical Activities</a>
+						</li>
+						<li class="list-group-item">
+							<a href="../Pages/info.php?page=Wholesale and Retail Trade">Wholesale and Retail Trade</a>
+						</li>
+						<li class="list-group-item">
+							<a href="../Pages/info.php?page=Financial and Insurance Activities">Financial and Insurance Activities</a>
+						</li>
+						<li class="list-group-item">
+							<a href="../Pages/info.php?page=Agriculture, Forestry and Fishing">Agriculture, Forestry and Fishing</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<div class="col-sm-3 text-left">
+
+				<div>
+					<div class="linkDeco">
+						<ul class="list-group links-list" style="width: 100% !important;margin-block-start: 10%;">
+							<li class="list-group-item" style="background:white;color: #05386b !important;font-size: 130%;border: 1px solid white; "
+							 data-toggle="modal" data-target="#department" data-toggle="tooltip" title="Click to know more!">
+								<span style="font-family: 'Open Sans', 'serif';font-size: 95%;">Top Interlocked Departments</button>
+								</span>
+							</li>
+							<li class="list-group-item">
+								<a href="../Pages/info.php?page=Ministry Of Finanace">Ministry Of Finance</a>
+							</li>
+							<li class="list-group-item">
+								<a href="../Pages/info.php?page=Ministry Of Commerce and Industry">Ministry Of Commerce and Industry</a>
+							</li>
+							<li class="list-group-item">
+								<a href="../Pages/info.php?page=Ministry Of Textiles">Ministry Of Textiles</a>
+							</li>
+							<li class="list-group-item">
+								<a href="../Pages/info.php?page=Ministry Of Housing and Urban Affairs">Ministry Of Housing and Urban Affairs</a>
+							</li>
+							<li class="list-group-item">
+								<a href="../Pages/info.php?page=Ministry Of Home Affairs">Ministry Of Home Affairs</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid" style="background:white; height: 80%;">
+		<div class="row main-graph" style="background:white; height: 100%;">
+			<div class="col-sm-6 text-left" style="background:white; height:100%!important">
+				<h3 class="text-center" style="color: #05386b !important;">Corporate Concentration</h3>
+				<div id="chart" style="background: white; height: 85%;">
+
+				</div>
+				<script>
+					// Themes begin
+							am4core.useTheme(am4themes_animated);
+					
+							//am4core.useTheme(am4themes_material);
+							// Themes end
+					
+							var chart = am4core.create("chart", am4charts.XYChart);
+					
+							// Set up data source
+							chart.dataSource.url = "../csv data/Interlocks/corpconcentration.csv";
+							chart.dataSource.parser = new am4core.CSVParser();
+							chart.dataSource.parser.options.useColumnNames = true;
+					
+							// Create axes
+							var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+							categoryAxis.dataFields.category = "date";
+							categoryAxis.renderer.labels.template.rotation = -90;
+							var label = categoryAxis.renderer.labels.template;
+							label.truncate = true;
+							label.maxWidth = 100;
+							categoryAxis.renderer.minGridDistance = 0.1;
+							// label.maxheight = 50;
+							label.tooltipText = "{category}";
+					
+							// Create value axis
+							var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+					
+					
+							// Create series
+							var series1 = chart.series.push(new am4charts.LineSeries());
+							series1.dataFields.valueY = "Tata Group";
+							series1.dataFields.categoryX = "date";
+							series1.name = "Tata Group";
+							series1.strokeWidth = 2;
+					
+							series1.tooltipText = "{valueY}";
+							//series1.tensionX = 0.7;
+							series1.bullets.push(new am4charts.CircleBullet());
+
+							var series2 = chart.series.push(new am4charts.LineSeries());
+							series2.dataFields.valueY = "Aditya Birla Group";
+							series2.dataFields.categoryX = "date";
+							series2.name = "Aditya Birla Group";
+							series2.strokeWidth = 2;
+					
+							series2.tooltipText = "{valueY}";
+							//series1.tensionX = 0.7;
+							series2.bullets.push(new am4charts.CircleBullet());
+
+							var series3 = chart.series.push(new am4charts.LineSeries());
+							series3.dataFields.valueY = "Reliance Group";
+							series3.dataFields.categoryX = "date";
+							series3.name = "Reliance Group";
+							series3.strokeWidth = 2;
+					
+							series3.tooltipText = "{valueY}";
+							//series1.tensionX = 0.7;
+							series3.bullets.push(new am4charts.CircleBullet());
+
+							var series4 = chart.series.push(new am4charts.LineSeries());
+							series4.dataFields.valueY = "Adani Group";
+							series4.dataFields.categoryX = "date";
+							series4.name = "Adani Group";
+							series4.strokeWidth = 2;
+					
+							series4.tooltipText = "{valueY}";
+							//series1.tensionX = 0.7;
+							series4.bullets.push(new am4charts.CircleBullet());
+
+							var series5 = chart.series.push(new am4charts.LineSeries());
+							series5.dataFields.valueY = "Bajaj Group";
+							series5.dataFields.categoryX = "date";
+							series5.name = "Bajaj Group";
+							series5.strokeWidth = 2;
+					
+							series5.tooltipText = "{valueY}";
+							//series1.tensionX = 0.7;
+							series5.bullets.push(new am4charts.CircleBullet());
+					
+							chart.cursor = new am4charts.XYCursor();
+							chart.cursor.xAxis = categoryAxis;
+							//chart.cursor.snapToSeries = series1;
+					
+						chart.scrollbarX = new am4core.Scrollbar();
+						//	chart.scrollbarY = new am4core.Scrollbar();
+					
+					
+							// Add legend
+							chart.legend = new am4charts.Legend();
+						</script>
+			</div>
+
+			<div class="col-sm-6" style="background:white; height:100%!important">
+				<h3 class="text-center" data-toggle="modal" data-target="#rankingdescription" data-toggle="tooltip" title="Click to know about the ranking methods!">
+					<span style="color: #05386b !important;">Index of Corporate-Government Interlocks </button>
+					</span>
+				</h3>
+				<div id="chart1"  style="height:85%;">
+				</div>
+				<script>
+					// Themes begin
+						am4core.useTheme(am4themes_animated);
+				
+						am4core.useTheme(am4themes_material);
+						// Themes end
+				
+						var chart = am4core.create("chart1", am4charts.XYChart);
+				
+						// Set up data source
+						chart.dataSource.url = "../csv data/Interlocks/interlockindex.csv";
+						chart.dataSource.parser = new am4core.CSVParser();
+						chart.dataSource.parser.options.useColumnNames = true;
+				
+						// Create axes
+						var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+						categoryAxis.dataFields.category = "date";
+						categoryAxis.renderer.labels.template.rotation = -45;
+						var label = categoryAxis.renderer.labels.template;
+						label.truncate = true;
+						label.maxWidth = 100;
+						categoryAxis.renderer.minGridDistance = 0.1;
+						// label.maxheight = 50;
+						label.tooltipText = "{category}";
+				
+						// Create value axis
+						var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+				
+				
+						// Create series
+						var series1 = chart.series.push(new am4charts.LineSeries());
+						series1.dataFields.valueY = "value";
+						series1.dataFields.categoryX = "date";
+						series1.name = "index";
+						series1.strokeWidth = 2;
+				
+						series1.tooltipText = "{valueY}";
+						//series1.tensionX = 0.7;
+						series1.bullets.push(new am4charts.CircleBullet());
+				
+						chart.cursor = new am4charts.XYCursor();
+						chart.cursor.xAxis = categoryAxis;
+						//chart.cursor.snapToSeries = series1;
+				
+					//	chart.scrollbarX = new am4core.Scrollbar();
+					//	chart.scrollbarY = new am4core.Scrollbar();
+				
+				
+						// Add legend
+						chart.legend = new am4charts.Legend();
+					</script>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			$('.dropdown-submenu a.test').on("click", function (e) {
+				$(this).next('ul').toggle();
+				e.stopPropagation();
+				e.preventDefault();
+			});
+		});
+	</script>
+
+<div class="OuterDiv" id="OuterDiv">
+	<div class="LeftBlock">
+		<ul class="list-group links-list" style="box-shadow: 0px 0px 6px white;width: 100%;text-align: center;">
+			<li id="B1" class="list-group-item"
+				style="background:white;color: #05386b !important;font-size:140%;border: 1px solid white; ">
+				<span style="font-family: 'Open Sans', 'serif'; text-align: center;">Corporate Social Responsibility 
+				</span>
+			</li>
+			<li class="list-group-item lis " style="border: 1px solid white !important;">
+				<div class="Des1">
+					<a href="socialresponsibility.htm"
+						style="text-decoration: none;">
+						<p style="text-align: left !important;height: 133px;overflow: auto;color: #555555">
+						Corporate Social Responsibility (CSR) is a type of business self regulation, 
+						where companies donate a part of their income into different sectors related to public welfare, for the purpose of social good. 
+						Such CSR donations also form a part of the interlocks that exist between the corporate and government networks.</p>
+					</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class=RightBlock style="margin-top: 3%;">
+		<ul class="list-group links-list" style="box-shadow: 0px 0px 6px white;width: 100%;text-align: center;">
+			<li id="B2" class="list-group-item"
+				style="background:white;color: #05386b !important;font-size:140%;border: 1px solid white; ">
+				<span style="font-family: 'Open Sans', 'serif'; text-align: center;">Political Funding
+				</span>
+			</li>
+			<li class="list-group-item lis " style="border: 1px solid white !important;">
+				<div class="Des2">
+					<a href="politicalfunding.htm"
+						style="text-decoration: none;">
+						<p style="text-align: left !important;height: 133px;overflow: auto;color: #555555">##################
+							##############################################
+							##############################################
+							###########
+						#################################################
+						##########################################################
+					##################################
+					############################################
+                                                        ##############################################
+                                                        ##############################################
+                                                        ###########
+                                                #################################################
+                                                ##########################################################
+                                        ##################################
+                                        ##########################</p>
+					</a>
+				</div>
+
+
+			</li>
+
+		</ul>
+	</div>
+</div>
+
+	<div id="footer"></div>
+
+	<div class="modal fade" id="rankingdescription" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Ranking Political and Corporate Entities</h4>
+				</div>
+				<div class="modal-body">
+					<p>To see which entities are more important than others, we developed a ranking mechanism, using the well known
+						PageRank
+						algorithm (
+						<a target="_blank" href="http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf">Click here</a>). Briefly stated, this
+						algorithm ranks those entities higher, which are connected to other highly important
+						entities. So, in a way, your connections define how important you are! For more details, please refer to our
+						paper
+						(
+						<a target="_blank" href="http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf">Click here</a>). These ranks are used
+						in the index calculation procedure.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="department" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h5 class="modal-title">Hotspots are hubs of potential policy influence or cronyism. On the government side we
+						have governemnt departments and
+						ministries as hotspots: that is, politicians and bureaucrats interlock with each other through these departments
+						and
+						ministries. Similarly on the corporate side, industry sectors are hotspots where companies and their directors
+						belong.
+						We wanted to find out if there exist interlocks between these hotspots. Hence, we considered paths(interlocks) of
+						upto
+						3 hops between departments (ministries) and industry sectors. Here we show an example interlock between an
+						government
+						departments and an industry sector.</h5>
+				</div>
+				<div class="modal-body">
+					<img src="../Images/INTERLOCKDESC.jpg" class="img-thumbnail">
+					<p>Following are the top 5 most interlocked departments listed in decreasing order of their number of interlocks.
+						As mentioned
+						earlier, these hotspots are some of the most important hubs of policy influence and cronyism. Click on each
+						department
+						to know more about the details of the interlocks.
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="modal fade" id="sector" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h5 class="modal-title">Hotspots are hubs of potential policy influence or cronyism. On the government side we
+						have governemnt departments and
+						ministries as hotspots: that is, politicians and bureaucrats interlock with each other through these departments
+						and
+						ministries. Similarly on the corporate side, industry sectors are hotspots where companies and their directors
+						belong.
+						We wanted to find out if there exist interlocks between these hotspots. Hence, we considered paths(interlocks) of
+						upto
+						3 hops between departments (ministries) and industry sectors. Here we show an example interlock between an
+						government
+						departments and an industry sector.</h5>
+				</div>
+				<div class="modal-body">
+					<img src="../Images/INTERLOCKDESC.jpg" class="img-thumbnail">
+					<p>Following are the top 5 most interlocked industry sectors listed in decreasing order of their number of
+						interlocks.
+						As mentioned earlier, these hotspots are some of the most important hubs of policy influence and cronyism. Click
+						on
+						each industry sector to know more about the details of the interlocks.
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="modal fade" id="indexgraphdescription" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h5 class="modal-title">We consider two types of entities in our work: corporate entities (comprising publicly
+						listed comanies, their directors,
+						and their industry sectors), and government entities (comprising of politicians, and bureaucrats or IAS
+						officers).</h5>
+				</div>
+				<div class="modal-body">
+					<p>To empirically measure the extent of corporate-government interlocks, we have developed an
+						<B>index of interlock</B>, which roughly measures the number and importance of links between important corporate
+						and government
+						entities. In other words, more the links between important corporate and government entities, higher is the index
+						value.
+						For more details on the index, please refer to our paper (reference). We can see from this plot that
+						corporate-government
+						interlocks are showing a steady increase with time. On the x-axis, we have the Lok-Sabha election years. On the
+						y-axis,
+						we have the index value. This plot proves that with each passing year, more links are being formed between
+						corporate
+						and government entities, indicative of the formation of a powerful group of influential politicians, bureaucrats,
+						and
+						business-persons.
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="footer"></div>
+</body>
+
+</html>

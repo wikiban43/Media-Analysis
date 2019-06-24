@@ -1,0 +1,9 @@
+<b>Examples on Aadhar articles in newspapers depicting positive and negative sentiment.</b><br>
+<br>
+<b>Positive</b><br>
+<b>1.</b> By the time the deadline set for the introduction of the Direct Benefit Transfer of LPG subsidy (DBTL) expired on Tuesday, Rs. 322.53 crore was transferred as LPG subsidy through bank accounts in over 67.38 lakh transactions.According to figures released on Monday, Ernakulam topped the list with the distribution of Rs. 38.06 crore through bank accounts of LPG subscribers in over 7.95 lakh transactions. Idukki was ranked at the bottom with the transfer of just Rs. 5.96 crore in over 1.26 lakh transactions....."<br>
+<br>
+<b>Negative</b><br>
+<b>1.</b> "Joint Collector R. Mutyala Raju on Saturday asked the District Supplies Officer to issue a show-cause notice to the Mandal Supplies Officer of Tallarevu for failing to discharge his duties on the Aadhaar-LPG seeding front.Addressing a review meeting on the Aadhaar-LPG seeding with the officials of the Civil Supplies Department, the Joint Collector expressed dissatisfaction over the slow pace of the seeding. He observed that more and more people were complaining about the subsidy on LPG refill cylinders....."<br>
+
+<b>2.</b> "The State secretariat of the Communist Party of India (Marxist) [CPI(M)] has asked the Union government to withdraw immediately its illegal decision to make Aadhaar linking compulsory for availing cooking gas subsidy.In a statement here on Tuesday, the party State secretariat said the Union Petroleum Ministry had virtually declared war on the common man by announcing that, effective from January 1, 2014, those who had not linked their gas consumer details to their bank accounts by using their Aadhaar would not receive any......."

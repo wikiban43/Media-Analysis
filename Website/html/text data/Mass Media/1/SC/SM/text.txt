@@ -1,0 +1,13 @@
+<b>Examples in Demonetisation depicting tweet sentiment.</b> 
+<br><br>
+<b>Positive</b>
+<br><b>1.</b> "Digital transactions via UPI see 584% jump since demonetisation"
+<br><b>2.</b> "World Bank CEO lauds demonetisation, says economy will see positive impact"
+<br><b>3.</b> "Demonetisation a catalyst for a cashless society"
+<br><b>4.</b> "Towards a cleaner society: Demonetisation may cause temporary pain but will bring rewards over time"
+<br>
+<b>Negative</b>
+<br><b>1.</b> "Harsh reminder of what a disaster demonetisation was Lest we forget. #500DaysOfDemoDisaster"
+<br><b>2.</b> "500 days ago, India was hit by Modi Govt's Demonetisation - an economic catastrophe that killed more than a hundred people and destroyed the lives of countless others. The nation will neither forgive nor forget. #500DaysOfDemoDisaster"
+<br><b>3.</b> "RT @srivatsayb: Local shops are being killed to favor big retail. It was evident from Day 1 of Demonetization. Going cashless in Big Bazaar…"
+<br><b>4.</b> "RT @tv9gujarati: Long queues at banks, no money in ATMs even after 37 days of #DeMonetisation"

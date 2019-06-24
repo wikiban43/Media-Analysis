@@ -1,0 +1,90 @@
+{"nodes":
+[
+  {
+    "id": "1",
+    "label": "Ministry of Textiles"
+  },
+  {
+    "id": "2",
+    "label": "ACTIVITIES OF EXTRATERRITORIAL ORGANISATIONS AND BODIES"
+  },
+  {
+    "id": "3",
+    "label": "AGRICULTURE, FORESTRY AND FISHING"
+  },
+  {
+    "id": "4",
+    "label": "Arts, entertainment and recreation"
+  },
+  {
+    "id": "5",
+    "label": "PROFESSIONAL, SCIENTIFIC AND TECHNICAL ACTIVITIES"
+  },
+  {
+    "id": "6",
+    "label": "WHOLESALE AND RETAIL TRADE"
+  },
+  {
+    "id": "7",
+    "label": "Human health and social work activities"
+  },
+  {
+    "id": "8",
+    "label": "INFORMATION AND COMMUNICATION"
+  },
+  {
+    "id": "9",
+    "label": "MANUFACTURING"
+  }
+],
+"edges":[
+  {
+    "from": "1",
+    "to": "2",
+    "value": "3",
+    "label": "3"
+  },
+  {
+    "from": "1",
+    "to": "3",
+    "value": "10",
+    "label": "10"
+  },
+  {
+    "from": "1",
+    "to": "4",
+    "value": "4",
+    "label": "4"
+  },
+  {
+    "from": "1",
+    "to": "5",
+    "value": "36",
+    "label": "36"
+  },
+  {
+    "from": "1",
+    "to": "6",
+    "value": "21",
+    "label": "21"
+  },
+  {
+    "from": "1",
+    "to": "7",
+    "value": "9",
+    "label": "9"
+  },
+  {
+    "from": "1",
+    "to": "8",
+    "value": "5",
+    "label": "5"
+  },
+  {
+    "from": "1",
+    "to": "9",
+    "value": "55",
+    "label": "55"
+  }
+]
+}

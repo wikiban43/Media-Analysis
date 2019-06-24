@@ -1,0 +1,19 @@
+.main-nav-bg { background: #f2f2f2; }
+
+.main-navigation a { color: #565656; }
+
+.main-navigation a:hover, .main-navigation a:active, .main-navigation a:focus { color: #080808; }
+
+.main-navigation .current_page_item > a { color: #080808; }
+
+.main-navigation ul ul { background: #f2f2f2; }
+
+.widget .widget-title { background: #f2f2f2; color: #181818; }
+
+.widget .widget-title:after { border-top-color: #f2f2f2; }
+
+.slicknav_menu { background: #f2f2f2; }
+
+.slicknav_menu a { color: #181818; }
+
+.slicknav_btn { text-shadow: none; }

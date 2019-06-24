@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <style>
+        body {
+            font-family: 'Open Sans', 'serif';
+            font-size: 14px;
+            overflow: auto;
+        }
+
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('../images/page-loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
+        }
+
+        .one {
+            background: center / contain no-repeat url('../Images/Corporate Interlocks/Corporate Social Responsibility Data/Fig1 -CSR Expenditure/NewStatewise_HeatMap.png');
+            height: 500px;
+            transition: transform .2s ease-in-out;
+        }
+
+        .two {
+            background: center / contain no-repeat url('../Images/Corporate Interlocks/Corporate Social Responsibility Data/Fig1 -CSR Expenditure Top and Bottom Statewise/TOP5Bottom5.png');
+            height: 500px;
+            transition: transform .2s ease-in-out;
+        }
+
+        .three {
+            background: center / contain no-repeat url('../Images/Corporate Interlocks/Corporate Social Responsibility Data/Fig1 -CSR Per Capita Expenditure/NewPerCapita_HeatMap.png');
+            height: 500px;
+            transition: transform .2s ease-in-out;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.min.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $(".loader").fadeOut("slow");
+        })
+    </script>
+    <div id="header"></div>
+
+    <div class="container-fluid">
+
+        <div class="row" style="height:150% !important;">
+
+            <div class="col-sm-12 text-left">
+                <h2 class="text-center" style="color: #05386b !important;">Regression Table</h2>
+
+                <!--Table-->
+                <div class="table-responsive">
+                    <table class="table">
+                        <!--Table head-->
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Independent Variable</th>
+                                <th>Model - 1 </th>
+                                <th>Model - 2 </th>
+                                <th>Model - 3 </th>
+                                <th>Model - 4 </th>
+                                <th>Model - 5 </th>
+                                <th>Model - 6 </th>
+                            </tr>
+                        </thead>
+                        <!--Table head-->
+
+                        <!--Table body-->
+                        <tbody>
+                            <tr class="table-info">
+                                <th scope="row">1</th>
+                                <td>Type of consituency is Gen & Non Backward</td>
+                                <td>4.26 <br>
+                                    (0.000***)</td>
+                                <td>3.93 <br>
+                                    (0.000***)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Type of consituency is SC & Non Backward</td>
+                                <td>3.60 <br>
+                                    (0.000***)</td>
+                                <td>3.31 <br>
+                                    (0.000***)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">3</th>
+                                <td>Type of consituency is ST & Non Backward</td>
+                                <td>1.84 <br>
+                                    (0.204)</td>
+                                <td>1.77 <br>
+                                    (0.217)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Type of consituency is Gen & Backward</td>
+                                <td>1.61 <br>
+                                    (0.055)</td>
+                                <td>1.51 <br>
+                                    (0.069)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">5</th>
+                                <td>Type of consituency is SC & Backward</td>
+                                <td>-0.42 <br>
+                                    (0.804)</td>
+                                <td>-0.82 <br>
+                                    (0.630)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Type of consituency is ST & Backward</td>
+                                <td>3.86 <br>
+                                    (0.007**)</td>
+                                <td>3.80 <br>
+                                    (0.007**)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">7</th>
+                                <td>Vote margin (%) b/w MP & runners up</td>
+                                <td></td>
+                                <td>0.10 <br>
+                                    (0.002**)</td>
+                                <td></td>
+                                <td></td>
+                                <td>0.096 <br>
+                                    (0.004**)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>If there is state alignment(alignment between MPs
+                                    party <br> and party in power in state)</td>
+                                <td></td>
+                                <td></td>
+                                <td>2.35 <br>
+                                    (0.001**)</td>
+                                <td>2.34 <br>
+                                    (0.001**)</td>
+                                <td>2.01 <br>
+                                    (0.003**)</td>
+                                <td>2.16 <br>
+                                    (0.001**)</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">9</th>
+                                <td>If there is center alignment(alignment between MPs
+                                    party <br> and party in powerin center)</td>
+                                <td></td>
+                                <td></td>
+                                <td>0.415 <br>
+                                    (0.55)</td>
+                                <td>0.45 <br>
+                                    (0.52)</td>
+                                <td>-0.034 <br>
+                                    (0.96)</td>
+                                <td>0.38 <br>
+                                    (0.59)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>if MP is a minister</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>-1.76 <br>
+                                    (0.14)</td>
+                                <td>-1.89 <br>
+                                    (0.11)</td>
+                                <td>-5.27 <br>
+                                    (0.000***)</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">11</th>
+                                <td>if a district in constituency is selected by Rajya Sabha MP who is also <br> minister as
+                                    MPLAD District</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>4.67 <br>
+                                    (0.005**)</td>
+                                <td>4.75 <br>
+                                    (0.004**)</td>
+                                <td>1.07 <br>
+                                    (0.57)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12</th>
+                                <td>is there any overlap between MPs Ministry and company’s sector</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>7.20 <br>
+                                    (0.000***)</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">13</th>
+                                <td>Intercept</td>
+                                <td>14.75</td>
+                                <td>13.51</td>
+                                <td>16.4</td>
+                                <td>16.45</td>
+                                <td>15.55</td>
+                                <td>16.64</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">14</th>
+                                <td>R-Square</td>
+                                <td>0.025</td>
+                                <td>0.042</td>
+                                <td>0.02</td>
+                                <td>0.04</td>
+                                <td>0.06</td>
+                                <td>0.07</td>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+
+
+                    </table>
+                </div>
+                <!--Table-->
+            </div>
+
+
+        </div>
+        <div class="row" style="height:50% !important;">
+
+            <div class="col-sm-12 text-left">
+                <p
+                    style="margin-inline-end: 1%;margin-inline-start: 1%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 15px !important;">
+                    Regression Table Description : With an aim to establish a relationship between the CSR amount spent in all the Lok Sabha constituencies 
+			of the country in FY 2014-15 (dependent variable) and various independent variables like Type of constituency, 
+			vote margin, MP alignment, company sector and ministry overlap etc, Linear Regression was carried out based upon six models. 
+			The expenditure details available on the official CSR website is district wise, whereas for analysis data is required constituency wise.
+			Therefore, for the ease of carrying out the analysis and better assimilation, all the districts were mapped to the constituencies. 
+			As some of the districts are part of more than one constituency in which case the amount spent in the district 
+			has been reflected towards all the constituencies.
+                </p>
+            </div>
+
+
+        </div>
+        <div class="row" style="height:150% !important;">
+
+            <div class="col-sm-4 text-left">
+                <h2 class="text-center" style="color: #05386b !important;">CSR Expenditures </h2>
+                <div class="one">
+                </div>
+            </div>
+            <div class="col-sm-4 text-left">
+                <h2 class="text-center" style="color: #05386b !important;">CSR Expenditure Top and Bottom Statewise
+                </h2>
+                <div class="two">
+
+                </div>
+
+            </div>
+            <div class="col-sm-4 text-left">
+                <h2 class="text-center" style="color: #05386b !important;">CSR Per Capita Expenditure</h2>
+                <div class="three">
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row" style="height:50% !important;">
+
+            <div class="col-sm-12 text-left">
+                <p
+                    style="margin-inline-end: 1%;margin-inline-start: 1%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 15px !important;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ac tincidunt vitae semper quis. Velit scelerisque in dictum non
+                    consectetur.
+                    Porta non pulvinar neque laoreet suspendisse interdum consectetur libero id. Pulvinar neque
+                    laoreet
+                    suspendisse interdum consectetur libero id faucibus nisl. Facilisis leo vel fringilla est.
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <div id="footer"></div>
+
+
+
+</body>
+
+</html>

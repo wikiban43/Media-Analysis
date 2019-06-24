@@ -1,0 +1,90 @@
+{"nodes":
+[
+  {
+    "id": "1",
+    "label": "Ministry of Commerce and Industry"
+  },
+  {
+    "id": "2",
+    "label": "AGRICULTURE, FORESTRY AND FISHING"
+  },
+  {
+    "id": "3",
+    "label": "Arts, entertainment and recreation"
+  },
+  {
+    "id": "4",
+    "label": "FINANCIAL AND INSURANCE ACTIVITIES"
+  },
+  {
+    "id": "5",
+    "label": "INFORMATION AND COMMUNICATION"
+  },
+  {
+    "id": "6",
+    "label": "MANUFACTURING"
+  },
+  {
+    "id": "7",
+    "label": "PROFESSIONAL, SCIENTIFIC AND TECHNICAL ACTIVITIES"
+  },
+  {
+    "id": "8",
+    "label": "TRANSPORT AND STORAGE"
+  },
+  {
+    "id": "9",
+    "label": "WHOLESALE AND RETAIL TRADE"
+  }
+],
+"edges":[
+  {
+    "from": "1",
+    "to": "2",
+    "value": "11",
+    "label": "11"
+  },
+  {
+    "from": "1",
+    "to": "3",
+    "value": "10",
+    "label": "10"
+  },
+  {
+    "from": "1",
+    "to": "4",
+    "value": "29",
+    "label": "29"
+  },
+  {
+    "from": "1",
+    "to": "5",
+    "value": "8",
+    "label": "8"
+  },
+  {
+    "from": "1",
+    "to": "6",
+    "value": "88",
+    "label": "88"
+  },
+  {
+    "from": "1",
+    "to": "7",
+    "value": "71",
+    "label": "71"
+  },
+  {
+    "from": "1",
+    "to": "8",
+    "value": "16",
+    "label": "16"
+  },
+  {
+    "from": "1",
+    "to": "9",
+    "value": "47",
+    "label": "47"
+  }
+]
+}

@@ -1,0 +1,98 @@
+﻿html,
+body {
+    margin: 0%;
+    padding: 0%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-decoration: none;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    font-size: 120%;
+}
+
+a {
+    color: #05386b !important;
+}
+
+.header {
+    background: #5cdb95;
+    color: #05386b !important;
+    border: none !important;
+}
+
+.info {
+    float: left;
+    width: 66.6%;
+}
+
+#image {
+    margin-block-start: -15%;
+    height: 100%;
+    width: 100%;
+}
+
+.custom-nav li:hover {
+    background: #b8ffcb;
+}
+
+.poll {
+    float: right;
+    width: 33.3%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-left: 0;
+    padding-left: 0px;
+}
+
+.panel-body .radio,
+.panel-body .checkbox {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.panel-body .list-group {
+    margin-bottom: 0;
+}
+
+.margin-bottom-none {
+    margin-bottom: 0;
+}
+
+.panel-body .radio label,
+.panel-body .checkbox label {
+    display: block;
+}
+
+.panel-body:not(.two-col) {
+    padding: 0px
+}
+
+.noresize {
+    resize: none;
+}
+
+@media screen and (max-width: 767px) {
+    .info {
+        float: none;
+        width: 100%;
+    }
+    .poll {
+        float: none;
+        width: 100%;
+    }
+}

@@ -1,0 +1,90 @@
+{"nodes":
+[
+  {
+    "id": "1",
+    "label": "Professional, Scientific and Technical Activities"
+  },
+  {
+    "id": "2",
+    "label": "Ministry of Finance"
+  },
+  {
+    "id": "3",
+    "label": "Ministry of Commerce and Industry"
+  },
+  {
+    "id": "4",
+    "label": "Ministry of Textiles"
+  },
+  {
+    "id": "5",
+    "label": "Ministry of Housing and Urban Affairs"
+  },
+  {
+    "id": "6",
+    "label": "Ministry of Home Affairs"
+  },
+  {
+    "id": "7",
+    "label": "Ministry of Agriculture and Farmers Welfare"
+  },
+  {
+    "id": "8",
+    "label": "Ministry of Human Resource Development"
+  },
+  {
+    "id": "9",
+    "label": "Ministry of Power"
+  }
+],
+"edges":[
+  {
+    "from": "1",
+    "to": "2",
+    "value": "86",
+    "label": "86"
+  },
+  {
+    "from": "1",
+    "to": "3",
+    "value": "71",
+    "label": "71"
+  },
+  {
+    "from": "1",
+    "to": "4",
+    "value": "36",
+    "label": "36"
+  },
+  {
+    "from": "1",
+    "to": "5",
+    "value": "52",
+    "label": "52"
+  },
+  {
+    "from": "1",
+    "to": "6",
+    "value": "44",
+    "label": "44"
+  },
+  {
+    "from": "1",
+    "to": "7",
+    "value": "36",
+    "label": "36"
+  },
+  {
+    "from": "1",
+    "to": "8",
+    "value": "31",
+    "label": "31"
+  },
+  {
+    "from": "1",
+    "to": "9",
+    "value": "36",
+    "label": "36"
+  }
+]
+}

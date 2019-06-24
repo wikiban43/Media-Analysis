@@ -1,0 +1,15 @@
+.main-nav-bg { background: #EF1D18; }
+
+.main-navigation a { color: rgba(255, 255, 255, 0.75); }
+
+.main-navigation a:hover, .main-navigation a:active, .main-navigation a:focus { color: #fff; opacity: 1; }
+
+.main-navigation .current_page_item > a { color: #fff; opacity: 1; }
+
+.main-navigation ul ul { background: #EF1D18; }
+
+.widget .widget-title { background: #EF1D18; color: #fff; }
+
+.widget .widget-title:after { border-top-color: #EF1D18; }
+
+.slicknav_menu { background: #EF1D18; }

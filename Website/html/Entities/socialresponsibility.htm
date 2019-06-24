@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <style>
+        body {
+            font-family: 'Open Sans', 'serif';
+            font-size: 14px;
+            overflow: auto;
+        }
+
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('../images/page-loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
+        }
+
+        .one {
+            background: center / contain no-repeat url('../Images/Corporate Interlocks/Corporate Social Responsibility Data/Fig1 -CSR Expenditure/NewStatewise_HeatMap.png');
+            height: 500px;
+            transition: transform .2s ease-in-out;
+        }
+
+        .two {
+            background: center / contain no-repeat url('../Images/Corporate Interlocks/Corporate Social Responsibility Data/Fig1 -CSR Expenditure Top and Bottom Statewise/TOP5Bottom5.png');
+            height: 500px;
+            transition: transform .2s ease-in-out;
+        }
+
+        .three {
+            background: center / contain no-repeat url('../Images/Corporate Interlocks/Corporate Social Responsibility Data/Fig1 -CSR Per Capita Expenditure/NewPerCapita_HeatMap.png');
+            height: 500px;
+            transition: transform .2s ease-in-out;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.min.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $(".loader").fadeOut("slow");
+        })
+    </script>
+    <div id="header"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="text-center" style="color: #05386b !important;">Corporate Social Responsibility</h1>
+            <div class="col-sm-12">
+                <p
+                    style="margin-inline-end: 4%;margin-inline-start: 4%;padding: 2.5px 2.5px 2.5px 2.5px; margin-block-start:2%;">
+                    
+		Corporate Social Responsibility (CSR) is a type of business self-regulation, where companies donate a part of their income into different sectors related to public welfare, for the purpose of social good. Such CSR donations also form a part of the interlocks that exist between the corporate and government networks. <br><br>
+
+The following table shows a linear regression analysis carried out on the CSR data in India, for investments during the financial year of 2014-15. Through this analysis, we want to answer the question, “which are the significant factors or features on which the CSR spending (amount) by companies depends?”. In the table, the leftmost column shows the factors that might influence CSR spending, and on the right, we have six regression models.
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container-fluid">
+
+        <div class="row" style="height:150% !important;">
+
+            <div class="col-sm-12 text-left">
+                <h2 class="text-center" style="color: #05386b !important;">Regression Table</h2>
+
+                <!--Table-->
+                <div class="table-responsive">
+                    <table class="table">
+                        <!--Table head-->
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Independent Variable</th>
+                                <th>Model - 1 </th>
+                                <th>Model - 2 </th>
+                                <th>Model - 3 </th>
+                                <th>Model - 4 </th>
+                                <th>Model - 5 </th>
+                                <th>Model - 6 </th>
+                            </tr>
+                        </thead>
+                        <!--Table head-->
+
+                        <!--Table body-->
+                        <tbody>
+                            <tr class="table-info">
+                                <th scope="row">1</th>
+                                <td>Type of consituency is Gen & Non Backward</td>
+                                <td>4.26 <br>
+                                    (0.000***)</td>
+                                <td>3.93 <br>
+                                    (0.000***)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Type of consituency is SC & Non Backward</td>
+                                <td>3.60 <br>
+                                    (0.000***)</td>
+                                <td>3.31 <br>
+                                    (0.000***)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">3</th>
+                                <td>Type of consituency is ST & Non Backward</td>
+                                <td>1.84 <br>
+                                    (0.204)</td>
+                                <td>1.77 <br>
+                                    (0.217)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Type of consituency is Gen & Backward</td>
+                                <td>1.61 <br>
+                                    (0.055)</td>
+                                <td>1.51 <br>
+                                    (0.069)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">5</th>
+                                <td>Type of consituency is SC & Backward</td>
+                                <td>-0.42 <br>
+                                    (0.804)</td>
+                                <td>-0.82 <br>
+                                    (0.630)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Type of consituency is ST & Backward</td>
+                                <td>3.86 <br>
+                                    (0.007**)</td>
+                                <td>3.80 <br>
+                                    (0.007**)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">7</th>
+                                <td>Vote margin (%) b/w MP & runners up</td>
+                                <td></td>
+                                <td>0.10 <br>
+                                    (0.002**)</td>
+                                <td></td>
+                                <td></td>
+                                <td>0.096 <br>
+                                    (0.004**)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>If there is state alignment(alignment between MPs
+                                    party <br> and party in power in state)</td>
+                                <td></td>
+                                <td></td>
+                                <td>2.35 <br>
+                                    (0.001**)</td>
+                                <td>2.34 <br>
+                                    (0.001**)</td>
+                                <td>2.01 <br>
+                                    (0.003**)</td>
+                                <td>2.16 <br>
+                                    (0.001**)</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">9</th>
+                                <td>If there is center alignment(alignment between MPs
+                                    party <br> and party in powerin center)</td>
+                                <td></td>
+                                <td></td>
+                                <td>0.415 <br>
+                                    (0.55)</td>
+                                <td>0.45 <br>
+                                    (0.52)</td>
+                                <td>-0.034 <br>
+                                    (0.96)</td>
+                                <td>0.38 <br>
+                                    (0.59)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>if MP is a minister</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>-1.76 <br>
+                                    (0.14)</td>
+                                <td>-1.89 <br>
+                                    (0.11)</td>
+                                <td>-5.27 <br>
+                                    (0.000***)</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">11</th>
+                                <td>if a district in constituency is selected by Rajya Sabha MP who is also <br>
+                                    minister as
+                                    MPLAD District</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>4.67 <br>
+                                    (0.005**)</td>
+                                <td>4.75 <br>
+                                    (0.004**)</td>
+                                <td>1.07 <br>
+                                    (0.57)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12</th>
+                                <td>is there any overlap between MPs Ministry and company’s sector</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>7.20 <br>
+                                    (0.000***)</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">13</th>
+                                <td>Intercept</td>
+                                <td>14.75</td>
+                                <td>13.51</td>
+                                <td>16.4</td>
+                                <td>16.45</td>
+                                <td>15.55</td>
+                                <td>16.64</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">14</th>
+                                <td>R-Square</td>
+                                <td>0.025</td>
+                                <td>0.042</td>
+                                <td>0.02</td>
+                                <td>0.04</td>
+                                <td>0.06</td>
+                                <td>0.07</td>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+
+
+                    </table>
+                </div>
+                <!--Table-->
+            </div>
+
+
+        </div>
+        <div class="row" style="height:50% !important;">
+
+            <div class="col-sm-12 text-left">
+                <p
+                    style="margin-inline-end: 4%;margin-inline-start: 4%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 15px !important;">
+                    
+                    <br><b>DESCRIPTION OF TABLE:</b><br>
+                    <br><b>(a)</b>In the first regression model, the two significant variables (or factors) observed were “whether the constituency is GEN and not backward” and “whether the constituency is SC and not backward”, with p-value less than 0.001, and positive relationship with the dependent variable. In other words, CSR spending is more in constituencies that are of general category and non-backward, or are of SC category and non-backward. 
+
+	             <br><br><b>(b)</b>In the second model, “Vote Margin percentage between current MP and the runners up in 2014 Lok Sabha elections” was added as an independent variable. This variable is also found to be significant positive coefficient and small p-value. This shows that if the vote difference percentage is higher, the amount spent in the corresponding constituency is slightly more than the amount spent in other constituencies.
+	
+                    <br><br><b>(c)</b>In the third model, the aim was to find out if the alignment of the MP with the ruling party of the union or state government has any relation with the CSR amount spent in the MP’s constituency. Result of this analysis shows that the state alignment variable is significant with a positive relationship with the dependent variable. In other words, the CSR amount spent in the constituency of the MP belonging to the ruling party of the state is more, compared to other constituencies. 
+			
+                    <br><br><b>(d)</b>Ministers in the Union Government may influence the CSR expenditure. Therefore, an independent variable, “whether the MP is a central minister” was added in the fourth model. We find that this variable is significant with a positive correlation, indicating that if the MP of the constituency is a central minister, the CSR spending is higher compared to other constituencies.<br><br>
+
+It is also observed that a number of ministers in the union are from Rajya Sabha. We also verify if the CSR amount spent in a district has any relation with the district selected by the Rajya Sabha MP (also a union minister) for spending his/her MPLAD fund. Results shows that, it has a strong positive relation with p-value 0.005. This means that if any district in a constituency is selected by the Rajya Sabha MP for using the MPLAD fund, the CSR spending in that district is higher compared to the others. 
+ 
+
+                    <br><br><b>(e)</b>In the fifth model, the vote margin percentage was added to the four independent variables used in the fourth model. It was found that vote margin is a significant feature and there is a slight increase in R squared value of the model. In other words, Model-4 combined with the “vote margin” percentage impacts the CSR spending significantly.
+ 
+
+                    <br><br><b>(f)</b> In the sixth model, we tried to observe if the variable, “whether there is any overlap between the industry sector of the company involved in CSR and the sectors of influence of the MP’s ministry (if MP from that constituency is a minister)” has any impact on the CSR spending. This variable was found to be very significant with a positive coefficient, which implies that if the MP is a minister and the policies framed by his ministry influences the sector that the company works in, then the CSR amount spent in the constituency is higher.
+
+
+
+                </p>
+            </div>
+
+
+        </div>
+        <hr>
+        <div class="row" style="height:150% !important;">
+
+            <div class="col-sm-4 text-left">
+                <h2 class="text-center" style="color: #05386b !important;">CSR Expenditures </h2>
+                <div class="one">
+                </div>
+            </div>
+            <div class="col-sm-4 text-left">
+                <h2 class="text-center" style="color: #05386b !important;">CSR Expenditure Top and Bottom Statewise
+                </h2>
+                <div class="two">
+
+                </div>
+
+            </div>
+            <div class="col-sm-4 text-left">
+                <h2 class="text-center" style="color: #05386b !important;">CSR Per Capita Expenditure</h2>
+                <div class="three">
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row" style="height:50% !important;">
+
+            <div class="col-sm-12 text-left">
+                <p
+                    style="margin-inline-end: 4%;margin-inline-start: 4%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 15px !important;">
+                    We represent the countrywide expenditure by companies on CSR activities using the above
+                    figures.<br><br>
+                    <b>(a) </b>The figure shows the total state wise CSR expenditure. <br>
+                    <b>(b) </b>The figure shows the states receiving highest and lowest amount of CSR by companies.<br>
+                    <b>(c) </b>The figure shows the per capita CSR expenditure (total expense divided by the population
+                    of the state).</p>
+            </div>
+
+
+        </div>
+        <hr>
+        <div class="row" style="height:50% !important;">
+
+            <div class="col-sm-12 text-left">
+                <h2 class="text-center" style="color: #05386b !important;">Sector wise CSR expenditure</h2>
+                <div class="oneone" id="oneone" style="height: 1000px;width: 100%;"></div>
+                <p
+                    style="margin-inline-end: 4%;margin-inline-start: 4%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 15px !important;">
+                    The Sector-wise CSR Expenditure is as follows.<br><br>During 2014-15, the first financial year, when CSR was made mandatory, sector covering Education, 
+		    Differently Abled and Livelihood had been the most preferable sector(Rs 3188.09 Cr i.e. approx. 32%) followed by Health, 
+		    Eradicating Hunger, Poverty And Malnutrition, Safe Drinking Water, Sanitation sector( Rs 2525.92 Cr i.e. 25%).
+		    On the other hand, Rs 5.47 Cr was spent for Clean Ganga sector which was the least preferred sector. 
+		    Similar trends were seen in the FY 2015-16 & 2016-17 as well. 
+			It was observed that CSR contribution towards PM National Relief Fund decreased continuously for these three years.
+                </p>
+                <script>
+                    // Themes begin
+                    am4core.useTheme(am4themes_animated);
+
+                    //am4core.useTheme(am4themes_material);
+                    // Themes end
+
+                    var chart = am4core.create("oneone", am4charts.XYChart);
+
+                    // Set up data source
+                    chart.dataSource.url =
+                        "../csv data/Interlocks/CSR/sectorwise.csv";
+                    chart.dataSource.parser = new am4core.CSVParser();
+                    chart.dataSource.parser.options.useColumnNames = true;
+
+                    // Create axes
+                    var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+                    categoryAxis.dataFields.category = "tag";
+                    categoryAxis.numberFormatter.numberFormat = "#";
+                    categoryAxis.renderer.inversed = true;
+                    categoryAxis.renderer.grid.template.location = 0;
+                    categoryAxis.renderer.cellStartLocation = 0.1;
+                    categoryAxis.renderer.cellEndLocation = 0.9;
+                    var label = categoryAxis.renderer.labels.template;
+                    label.truncate = false;
+                    label.maxWidth = 5;
+                    categoryAxis.renderer.minGridDistance = 0.1;
+                    // label.maxheight = 50;
+                    label.tooltipText = "{category}";
+
+                    // Create value axis
+                    var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+                    valueAxis.renderer.opposite = true;
+
+
+
+                    // Create series
+                    function createSeries(field, name) {
+                        var series = chart.series.push(new am4charts.ColumnSeries());
+                        series.dataFields.valueX = field;
+                        series.dataFields.categoryY = "tag";
+                        series.name = name;
+                        series.columns.template.tooltipText = "{name}: ₹ [bold]{valueX}[/] Crores";
+                        series.columns.template.height = am4core.percent(100);
+                        series.sequencedInterpolation = true;
+
+                        var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+                        valueLabel.label.horizontalCenter = "left";
+                        valueLabel.label.dx = 10;
+                        valueLabel.label.hideOversized = false;
+                        valueLabel.label.truncate = false;
+
+                        var categoryLabel = series.bullets.push(new am4charts.LabelBullet());
+                        categoryLabel.label.horizontalCenter = "right";
+                        categoryLabel.label.dx = -10;
+                        categoryLabel.label.fill = am4core.color("#fff");
+                        categoryLabel.label.hideOversized = false;
+                        categoryLabel.label.truncate = false;
+                    }
+
+                    createSeries("val14", "FY 2014-15");
+                    createSeries("val15", "FY 2015-16");
+                    createSeries("val16", "FY 2016-17");
+
+                    chart.scrollbarX = new am4core.Scrollbar();
+                    //	chart.scrollbarY = new am4core.Scrollbar();
+
+
+                    // Add legend
+                    chart.legend = new am4charts.Legend();
+                </script>
+
+            </div>
+            <div class="col-sm-12 text-left">
+                <h2 class="text-center" style="color: #05386b !important;">CSR Expenditure of Top Ten companies</h2>
+                <div class="twotwo" id="twotwo" style="height: 750px;width: 100%;"></div>
+                <p
+                    style="margin-inline-end: 4%;margin-inline-start: 4%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 15px !important;">
+                    Analysis of expenditure by Top 10 companies shows that none of these companies contributed towards Clean Ganga Fund and Swachh Bharat Kosh. Sectors like Education, Differently Abled, Livelihood and Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking Water, Sanitation had been subscribed by the majority of the companies. Expenditure by PSUs or other Govt owned establishments is not diversified, whereas Pvt companies spend their money on various activities under a variety of sectors.
+                </p>
+                <script>
+                    // Themes begin
+                    am4core.useTheme(am4themes_animated);
+
+                    //am4core.useTheme(am4themes_material);
+                    // Themes end
+
+                    var chart = am4core.create("twotwo", am4charts.XYChart);
+
+                    // Set up data source
+                    chart.dataSource.url =
+                        "../csv data/Interlocks/CSR/newtop10coysector.csv";
+                    chart.dataSource.parser = new am4core.CSVParser();
+                    chart.dataSource.parser.options.useColumnNames = true;
+                    chart.legend = new am4charts.Legend();
+                    chart.legend.position = "right";
+
+                    // Create axes
+                    var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+                    categoryAxis.dataFields.category = "company";
+                    categoryAxis.renderer.grid.template.opacity = 0;
+                    var label = categoryAxis.renderer.labels.template;
+                    label.truncate = false;
+                    label.maxWidth = 100;
+                    categoryAxis.renderer.minGridDistance = 0.1;
+                    // label.maxheight = 50;
+                    label.tooltipText = "{category}";
+
+                    // Create value axis
+                    var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+                    valueAxis.min = 0;
+                    valueAxis.renderer.grid.template.opacity = 0;
+                    valueAxis.renderer.ticks.template.strokeOpacity = 0.5;
+                    valueAxis.renderer.ticks.template.stroke = am4core.color("#495C43");
+                    valueAxis.renderer.ticks.template.length = 10;
+                    valueAxis.renderer.line.strokeOpacity = 0.5;
+                    valueAxis.renderer.baseGrid.disabled = true;
+
+
+                    // Create series
+                    function createSeries(field, name) {
+                        var series = chart.series.push(new am4charts.ColumnSeries());
+                        series.dataFields.valueX = field;
+                        series.dataFields.categoryY = "company";
+                        series.stacked = true;
+                        series.name = name;
+                        series.columns.template.tooltipText = "{name}: ₹ [bold]{valueX}[/]";
+                    }
+
+                    createSeries("Clean Ganga Fund", "Clean Ganga Fund");
+                    createSeries("Education, Differently Abled, Livelihood",
+                    "Education, Differently Abled, Livelihood");
+                    createSeries("Encouraging Sports", "Encouraging Sports");
+                    createSeries("Environment, Animal Welfare, Conservation Of Resources",
+                        "Environment, Animal Welfare, Conservation Of Resources");
+                    createSeries("Gender Equality , Women Empowerment , Old Age Homes , Reducing Inequalities",
+                        "Gender Equality , Women Empowerment , Old Age Homes , Reducing Inequalities");
+                    createSeries(
+                        "Health, Eradicating Hunger, Poverty And Malnutrition, Safe Drinking Water , Sanitation",
+                        "Health, Eradicating Hunger, Poverty And Malnutrition, Safe Drinking Water , Sanitation");
+                    createSeries("Heritage Art And Culture", "Heritage Art And Culture");
+                    createSeries(
+                        "Other Sectors ( Technology Incubator And Benefits To Armed Forces And Admin Overheads )",
+                        "Other Sectors ( Technology Incubator And Benefits To Armed Forces And Admin Overheads )");
+                    createSeries("Prime Ministers National Relief Fund", "Prime Ministers National Relief Fund");
+                    createSeries("Rural Development", "Rural Development");
+                    createSeries("Slum Area Development", "Slum Area Development");
+                    createSeries("Swachh Bharat Kosh", "Swachh Bharat Kosh");
+                    createSeries("Any Other Fund", "Any Other Fund");
+                    createSeries("NEC/ Not Mentioned", "NEC/ Not Mentioned");
+
+                    chart.scrollbarX = new am4core.Scrollbar();
+                    chart.scrollbarY = new am4core.Scrollbar();
+                </script>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <div id="footer"></div>
+
+
+
+</body>
+
+</html>

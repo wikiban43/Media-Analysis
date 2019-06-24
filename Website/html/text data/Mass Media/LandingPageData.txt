@@ -1,0 +1,12 @@
+	Constituencies are frames through which the public
+				perceives the content presented about an issue. For example, the statement,
+				“The loopholes in the implementation of the policy is raising concerns among
+				the middle class consumers and the underprivileged” can be perceived to be
+				about the middle class and the poor. Middle class and poor, are
+				thus the constituencies of the article presenting this statement.  The content in the newspapers are generally
+				oriented towards these frames or constituencies, so that they are better able
+				to connect to the public. This plot shows the distribution of newspapers over
+				the constituencies of poor, middle class, corporate, informal sector, and
+				government. The X-axis represents {category a} towards left, and
+				{category b} towards the right. The Y-axis represents {category c} towards the bottom, and {category d} towards
+				 the top. Here, we can see that  ... [newspapers and their categorical alignments to be mentioned].

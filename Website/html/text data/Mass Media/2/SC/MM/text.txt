@@ -1,0 +1,9 @@
+<b>Examples on GST articles in newspapers depicting positive and negative sentiment.</b>
+<br><br>
+<b>Positive</b><br>
+<b>1.</b> "Union Minister for Urban Development Venkaiah Naidu on Sunday contested the former Union Finance Minister, taking credit for the gross domestic product (GDP) touching 5.7 per cent in the first quarter of this year.If what Mr. Chidambaram claimed was true, why was it that growth did not pick up when he was the Finance Minister, he asked at a function organised here on Sunday to meet industrialists and trade representatives....."
+<br>
+<b>2.</b> "The Gujarat commercial tax department on Tuesday began migrating 4.66 lakh registered commercial tax payers to the GST regime. The department set a deadline of November 30 for moving these registered commercial tax payers.Speaking to reporters, deputy chief minister Nitin Patel said Gujarat is the third state to implement the migration after Sikkim and Pondicherry....."
+<br>
+<b>Negative</b>
+<br><b>1. </b>"KOLKATA: In one of her sharpest attacks , exactly a month after demonetisation , Bengal chief minister said the PM had no moral right to continue and should step aside. If that was not enough, Banerjee questioned the Centre's hurry to introduce the Goods and Services Tax by next September, throwing the future of the tax regime into uncertainty.Calling the last one-month period the darkest in the country's economy, the CM said

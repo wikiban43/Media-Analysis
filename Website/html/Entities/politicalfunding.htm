@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Political Funding</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+	<style>
+		body {
+			font-family: 'Open Sans', 'serif';
+			font-size: 14px;
+			overflow: auto;
+		}
+
+		.loader {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background: url('../images/page-loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="style.min.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+		$(function () {
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+		});
+	</script>
+	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+</head>
+
+<body>
+	<div class="loader"></div>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$(".loader").fadeOut("slow");
+		})
+	</script>
+	<div id="header"></div>
+	<div class="container-fluid">
+            <div class="row">
+					<h1 class="text-center" style="color: #05386b !important;">Political Funding</h1>
+<div class="col-sm-12">
+<p
+                        style="margin-inline-end: 4%;margin-inline-start: 4%;padding: 2.5px 2.5px 2.5px 2.5px; margin-block-start:2%;">
+                        Corporations often donate money to political parties. Such donations are sometimes on the rise, especially before elections. Needless to say, such donations also form a major chunk of the interlocks that exist between the corporate and government networks. As an outcome of these donations, companies often receive direct or indirect favours from the political parties as well, in terms of legislations/policies passed in favour of the companies, tax benefits, clearances obtained, and so on. <br>  
+			In this page we show the donation received by major Political Parties of India in last ten years followed by amount received by Bhartiya Janta Party (BJP) the biggest political party of India and Indian National Congress (INC) the oldest political party of India the data is taken from verified sources and shows interesting trends.                    
+
+</p>
+</div>
+            </div>
+		 </div>
+		 <hr>
+	<div class="container-fluid">
+		<div class="row" style="height:150% !important;">
+
+			<div class="col-sm-12 text-left">
+				<h2 class="text-center" style="color: #05386b !important;">Donation Received By Parties in Last 10 years
+				</h2>
+				<div class="one" id="one" style="height: 500px;width: 100%;">
+				</div>
+				<p
+					style="margin-inline-end: 4%;margin-inline-start: 4%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 15px !important;">
+					The donations received by the major national political parties in last 10 years.<br> The table has three
+					bars referring to BJP (Bharatiya Janata Party), INC (Indian National Congress), Rest which includes
+					the following parties : CPI,CPI(M),BSP, AITC,NCP.<br> From the figure we can conclude that the donation
+					received by the national political parties have been on rise. However the rate with which donations
+					has been received by BJP is much higher than rest of the political parties. In Lok Sabha election of
+					2009, both BJP and Congress had received almost equal amount. However subsequently in the next years
+					till 2017, the amount received by BJP was much more than all other parties.In 2014 Lok Sabha
+					Election, there was a massive increase of 5 times the prevous donation amount in 2009 for BJP
+					whereas INC got a mere jump of 1.5 times. BJP continued to receive large amount post 2014.Total
+					donations received by all political parties from known sources with amount greater than Rs 20,000 in
+					year 2017-18 is Rs 469.82 crores as per our calculation which can be verified from <a
+						href="https://adrindia.org/content/analysis-donationsreceived-above-rs-20000-national-political-parties-%E2%80%93-fy2017-18">
+						Report of
+						Association of Democratic Reforms
+					</a> which mentions an amount of Rs 469.89 crores.
+				</p>
+
+				<script>
+					// Themes begin
+					am4core.useTheme(am4themes_animated);
+
+					//am4core.useTheme(am4themes_material);
+					// Themes end
+
+					var chart = am4core.create("one", am4charts.XYChart);
+
+					// Set up data source
+					chart.dataSource.url =
+						"../Images/Corporate Interlocks/Political Funding/fig 1- Donation Received  By Parties in Last 10 years/fig1.csv";
+					chart.dataSource.parser = new am4core.CSVParser();
+					chart.dataSource.parser.options.useColumnNames = true;
+
+					// Create axes
+					var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+					categoryAxis.dataFields.category = "year";
+					categoryAxis.renderer.labels.template.rotation = -90;
+					var label = categoryAxis.renderer.labels.template;
+					label.truncate = true;
+					label.maxWidth = 100;
+					categoryAxis.renderer.minGridDistance = 0.1;
+					// label.maxheight = 50;
+					label.tooltipText = "{category}";
+
+					// Create value axis
+					var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+
+					// Create series
+					var series1 = chart.series.push(new am4charts.LineSeries());
+					series1.dataFields.valueY = "BJP";
+					series1.dataFields.categoryX = "year";
+					series1.name = "BJP";
+					series1.strokeWidth = 2;
+
+					series1.tooltipText = "₹ {valueY}";
+					//series1.tensionX = 0.7;
+					series1.bullets.push(new am4charts.CircleBullet());
+
+					var series2 = chart.series.push(new am4charts.LineSeries());
+					series2.dataFields.valueY = "CONGRESS";
+					series2.dataFields.categoryX = "year";
+					series2.name = "Congress";
+					series2.strokeWidth = 2;
+
+					series2.tooltipText = "₹ {valueY}";
+					//series1.tensionX = 0.7;
+					series2.bullets.push(new am4charts.CircleBullet());
+
+					var series3 = chart.series.push(new am4charts.LineSeries());
+					series3.dataFields.valueY = "REST";
+					series3.dataFields.categoryX = "year";
+					series3.name = "Rest";
+					series3.strokeWidth = 2;
+
+					series3.tooltipText = "₹ {valueY}";
+					//series1.tensionX = 0.7;
+					series3.bullets.push(new am4charts.CircleBullet());
+
+					chart.cursor = new am4charts.XYCursor();
+					chart.cursor.xAxis = categoryAxis;
+					//chart.cursor.snapToSeries = series1;
+
+					chart.scrollbarX = new am4core.Scrollbar();
+					//	chart.scrollbarY = new am4core.Scrollbar();
+
+
+					// Add legend
+					chart.legend = new am4charts.Legend();
+				</script>
+			</div>
+
+
+		</div>
+		<hr>
+		
+		<div class="row" style="height:150% !important;">
+
+			<div class="col-sm-12 text-left">
+				<h2 class="text-center" style="color: #05386b !important;">Comparison in Donation received by BJP and
+					INC</h2>
+				<div class="three" id="three" style="height: 500px;width: 100%;">
+				</div>
+				<p
+					style="margin-inline-end: 4%;margin-inline-start: 4%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 15px !important;">
+					The comparison betweeen donation received by BJP and INC when they had formed the government at
+					centre. Clearly the amount as well number of sectors donating to BJP is far more than that to INC
+					when INC was in power. For BJP many new sectors had emerged as major contributors which had not
+					donated to INC which indicates that these sectors have been bene?tted by the policies of BJP
+					government.<br> These sectors are :
+					<br><b>(a)</b> Agriculture and Allied Actvities <br><b>(b)</b> Auto Parts and Equipment<br><b> (c)</b> Electricity,Gas and Water <br><b>(d)</b>
+					Finance <br><b>(e)</b> Manufacturing(Food and Stuff) <br><b>(f)</b> Specialtiy Retail <br><b>(g)</b> Transport,Storage and
+					Communications
+					<br><br>On the other hand companies from following sectors did not donate to BJP while they had donated to
+					Congress when Congress was in power at the centre :
+					<br><b>(a)</b> Ciggarette and Tobacco Products <br><b>(b)</b> Manufacturing(Textiles) <br><b>(c)</b> Manufacturing(Wood Products)
+					Rest of the sectors had donated to both the parties with signi?cant increase in donation to BJP by
+					business services sector and significant reduction in donation to BJP by Manufacturing(Machinery and
+					Equipment).
+
+				</p>
+				<script>
+					am4core.ready(function () {
+
+						// Themes begin
+						am4core.useTheme(am4themes_animated);
+						// Themes end
+
+						// Create chart instance
+						var chart = am4core.create("three", am4charts.XYChart3D);
+						chart.dataSource.url =
+							"../Images/Corporate Interlocks/Political Funding/Fig 3- Comparison in Donation received by BJP and INC/fig3.csv";
+						chart.dataSource.parser = new am4core.CSVParser();
+						chart.dataSource.parser.options.useColumnNames = true;
+
+						// Create axes
+						var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+						categoryAxis.dataFields.category = "busscategory";
+						categoryAxis.renderer.grid.template.location = 0;
+						categoryAxis.renderer.minGridDistance = 30;
+						categoryAxis.renderer.labels.template.rotation = -90;
+						var label = categoryAxis.renderer.labels.template;
+						label.truncate = true;
+						label.maxWidth = 150;
+						label.offset = 0;
+						categoryAxis.renderer.minGridDistance = 0.1;
+						// label.maxheight = 50;
+						label.tooltipText = "{category}";
+
+						var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+						valueAxis.min = 0;
+						valueAxis.max = 10000000000;
+						valueAxis.strictMinMax = true;
+
+						var axisBreak = valueAxis.axisBreaks.create();
+						axisBreak.startValue = 200000000;
+						axisBreak.endValue = 10000000000;
+						axisBreak.breakSize = 0.0005;
+
+						// make break expand on hover
+						var hoverState = axisBreak.states.create("hover");
+						hoverState.properties.breakSize = 1;
+						hoverState.properties.opacity = 0.1;
+						hoverState.transitionDuration = 1500;
+
+						axisBreak.defaultState.transitionDuration = 1000;
+
+						// Create series
+						var series = chart.series.push(new am4charts.ColumnSeries3D());
+						series.dataFields.valueY = "BJP";
+						series.dataFields.categoryX = "busscategory";
+						series.name = "BJP";
+						series.clustered = false;
+						series.columns.template.tooltipText = "Donation received by BJP: [bold]{valueY}[/]";
+						series.columns.template.fillOpacity = 0.9;
+
+						var series2 = chart.series.push(new am4charts.ColumnSeries3D());
+						series2.dataFields.valueY = "INC";
+						series2.dataFields.categoryX = "busscategory";
+						series2.name = "INC";
+						series2.clustered = false;
+						series2.columns.template.tooltipText = "Donation received by INC : [bold]{valueY}[/]";
+
+					}); // end am4core.ready()
+				</script>
+
+			</div>
+
+
+		</div>
+	</div>
+	<div id="footer"></div>
+
+</body>
+
+</html>

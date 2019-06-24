@@ -1,0 +1,141 @@
+.OuterDiv1 {
+    width: 90%;
+    margin-block-start: 1%;
+    margin-block-end: 2%;
+    margin-inline-start: 5%;
+    margin-inline-end: 5%;
+    height: 40%;
+    transition: 0.3s ease-in-out;
+}
+
+.OuterDiv2 {
+    width: 90%;
+    margin-block-start: 1%;
+    margin-block-end: 2%;
+    margin-inline-start: 5%;
+    margin-inline-end: 5%;
+    height: 40%;
+    transition: 0.3s ease-in-out;
+}
+
+.LeftBlock {
+    float: left;
+    margin-inline-end: 1.5%;
+    margin-inline-start: 1.5%;
+    margin-block-start: 3%;
+    margin-block-end: 2.5%;
+    width: 41%;
+    height: 80%;
+    display: block;
+    border: 0.5px solid white;
+    border-radius: 5px;
+}
+
+.RightBlock {
+    float: right;
+    display: block;
+    width: 41%;
+    margin-inline-end: 1.5%;
+    margin-inline-start: 1.5%;
+    margin-block-start: 2.5%;
+    margin-block-end: 3%;
+    height: 80%;
+    border: 0.5px solid white;
+    border-radius: 5px;
+}
+
+.Des1 {
+    text-decoration: none;
+    display: block !important;
+    height: auto !important;
+}
+
+.Des2 {
+    text-decoration: none !important;
+    display: block !important;
+    height: auto !important;
+}
+
+
+
+.Des3 {
+    text-decoration: none !important;
+    display: block !important;
+    height: auto !important;
+}
+
+
+
+.Des4 {
+    text-decoration: none !important;
+    display: block !important;
+    height: auto !important;
+}
+
+
+.cbutton {
+    background: #5cdb95;
+    border: 1px solid #5cdb95;
+    width: 80%;
+    color: #05386b !important;
+    margin-block-start: 1%;
+    transition: 0.2s ease-in-out;
+    margin-block-end: 1%;
+}
+
+.cbutton:hover {
+    width: 85%;
+}
+
+.Des1 a :hover {
+    color: #05386b !important;
+}
+
+.Des2 a :hover {
+    color: #05386b !important;
+}
+
+.Des3 a :hover {
+    color: #05386b !important;
+}
+
+.Des4 a :hover {
+    color: #05386b !important;
+}
+
+.lis {
+    background: white !important;
+    border: 1px solid white !important;
+}
+
+.lis:hover {
+    background: white !important;
+}
+
+@media screen and (max-width: 767px) {
+    .LeftBlock {
+        float: none;
+        height: 200% !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 1% !important;
+    }
+
+    .RightBlock {
+        float: none;
+        height: 200% !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 1% !important;
+    }
+
+    .OuterDiv1 {
+        margin-block-start: 0% !important;
+        margin-block-end: 0% !important;
+    }
+
+    .OuterDiv2 {
+        margin-block-start: 50% !important;
+        margin-block-end: 0% !important;
+    }
+}

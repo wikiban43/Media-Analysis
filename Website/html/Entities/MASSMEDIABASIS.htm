@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Media Bias</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+	<style>
+		body {
+			font-family: 'Montserrat', 'serif' !important;
+			font-size: 14px !important;
+			overflow: auto !important;
+			color: #555555 !important;
+			letter-spacing: 0.15px !important;
+			text-align: left !important;
+			line-height: 1.5 !important;
+		}
+
+		.sect6 {
+			width: 100%;
+			text-align: center;
+			margin-block-start: 2%;
+			margin-block-end: 2%;
+
+			margin-left: -12px;
+			border-left: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+			-webkit-animation: sdb06 1.5s infinite;
+			animation: sdb06 1.5s infinite;
+			box-sizing: border-box;
+		}
+
+		.sect6 a:hover {
+			opacity: 1 !important;
+		}
+
+		.loader {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background: url('../Images/page-loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
+		}
+
+		.pc {
+			background: center / contain no-repeat url('../Images/PCA_final.png');
+		}
+
+		@media screen and (max-width: 767px) {
+			.pc {
+				float: none !important;
+				width: 100% !important;
+				height: 300px !important;
+				background: center / contain no-repeat url('../Images/PCA_final.png');
+				margin-inline-start: 0%;
+				margin-inline-end: 0%;
+
+			}
+
+			.abc {
+				float: none !important;
+				width: 100% !important;
+				height: 350px !important;
+			}
+
+			.abcd {
+				height: 650px !important;
+			}
+
+			.sect6 {
+				visibility: hidden;
+			}
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="style.min.css">
+	<link rel="stylesheet" type="text/css" href="../scripts/css/massmedia.min.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+		$(function () {
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+		});
+	</script>
+	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+</head>
+
+<body>
+	<div class="loader"></div>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$(".loader").fadeOut("slow");
+		})
+	</script>
+	<div id="header"></div>
+	<br>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 text-left">
+				<h1 style="text-align: center;color: #05386b !important;">Newspaper's Alignment</h1>
+				<br>
+				<p
+					style="margin-inline-end: 8%;margin-inline-start: 8%;padding: 2.5px 2.5px 2.5px 2.5px; font-size: 14px !important;">
+					Alignment of newspapers towards the five constituencies of poor, middle class, informal sector and
+					small trades, corporate, and government. Using the plot on the right, we try to answer the research
+					question: "Do news-sources have a bias towards or against constituencies like the poor, middle
+					class, corporate, informal sector, and government?". Through this research question, we try to
+					analyse the effect of framing in mass media. Framing refers to the modes of presentation that media
+					houses to present information in a way that aligns with the readers’ underlying schemas of
+					perceiving the content. One of the ways in which news-sources engage in framing is by orienting the
+					news content towards specific constituencies that their audience use to perceive the content. We
+					analyse this effect by automatically extracting aspects (topics of discussion) from the news
+					articles, and manually linking them with the five constituencies of poor, middle class, informal
+					sector and small trades, corporate, and government. For each policy, we map each aspect to the
+					constituencies to which it is relevant, and also see the alignment of the aspect towards the
+					constituency in terms of the sentiment of its constituent articles.<br><br>
+
+					We find that Hindu, Deccan Herald, and IE are centrist news-sources, with a slight alignment towards
+					the poor. In other words, these papers cover issues of the poor more than the others. Hindustan
+					Times is seen to be biased towards political issues or issues related to the government. Times of
+					India is seen to cover issues of the middle class. Finally, Telegraph is seen to be biased towards
+					giving more coverage to the informal sector and small trades.<br><br>
+
+					It is important to note that here we consider an article’s alignment to a constituency based on the
+					face-value of what the newspaper states about the constituency. For example, if the newspaper states
+					that a particular policy is helpful for the poor, we assume the article to be aligned to the poor
+					constituency. Hence, we do not provide expert advice of any sort on the deeper implications of a
+					policy formulation, or on the ideological alignment of the newspaper. We simply project the
+					newspapers on the constituencies they speak about.
+
+
+
+				</p>
+			</div>
+			<div class="col-sm-6 text-left">
+				<div style="height: 500px;margin-inline-start: 4%;margin-inline-end: 4%;" class="pc" id="pca"></div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 text-center">
+				<ul class="list-group links-list" style="box-shadow: 0px 0px 6px white;width: 100%;text-align: center;">
+					<li id="B1" class="list-group-item"
+						style="background:white;color: #05386b !important;font-size:140%;border: 1px solid white; ">
+						<span style="font-family: 'Open Sans', 'serif'; text-align: center;">Aadhaar
+						</span>
+					</li>
+					<li class="list-group-item lis " style="border: 1px solid white !important;">
+						<div class="Des1">
+							<a href="../Pages/mediainfo.php?event=0&np=timesofindia&eventn=Aadhaar&npn=Times Of India"
+								style="text-decoration: none;">
+								<p
+									style="margin-inline-end: 4%;margin-inline-start: 4%;text-align: left !important;height: 133px;overflow: auto;color: #555555">
+									An
+									initiative by the government to
+									give every Indian resident a biometric-based unique identification
+									number. The data is collected by the Unique Identification Author-
+									ity of India (UIDAI), a statutory authority under the jurisdiction
+									of the Ministry of Electronics and Information Technology. The
+									issue has been criticized owing to lack of security and privacy in
+									citizens’ data collection and storage mechanisms, and also because of an allegedly
+									faulty implementation of
+									the
+									platform or use of the
+									platform by different agencies.</p>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-6">
+				<ul class="list-group links-list" style="box-shadow: 0px 0px 6px white;width: 100%;text-align: center;">
+					<li id="B2" class="list-group-item"
+						style="background:white;color: #05386b !important;font-size:140%;border: 1px solid white; ">
+						<span style="font-family: 'Open Sans', 'serif'; text-align: center;">Demonestisation
+						</span>
+					</li>
+					<li class="list-group-item lis " style="border: 1px solid white !important;">
+						<div class="Des2">
+							<a href="../Pages/mediainfo.php?event=1&np=timesofindia&eventn=Demonetisation&npn=Times Of India"
+								style="text-decoration: none;">
+								<p
+									style="margin-inline-end: 4%;margin-inline-start: 4%;text-align: left !important;height: 133px;overflow: auto;color: #555555">
+									A policy
+									event
+									where the government on 8 November, 2016 banned all 500 INR and
+									1000 INR banknotes with the motive of curtailing the use of illicit
+									and counterfeit cash used to fund illegal activity and terrorism. The
+									move was widely criticized owing to multiple problems caused to
+									common people due to sudden depletion of liquidity, irregularities
+									in norms of exchanging old currency notes, cash exhaustion in
+									ATMs, and so on. </p>
+							</a>
+						</div>
+
+
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 text-center">
+				<ul class="list-group links-list" style="box-shadow: 0px 0px 6px white;width: 100%;text-align: center;">
+					<li id="B3" class="list-group-item"
+						style="background:white;color: #05386b !important;font-size:140%;border: 1px solid white; ">
+						<span style="font-family: 'Open Sans', 'serif'; text-align: center;">Farmer's Protest
+						</span>
+					</li>
+					<li class="list-group-item lis" style="border: 1px solid white !important;">
+						<div class="Des3">
+							<a href="../Pages/mediainfo.php?event=3&np=timesofindia&eventn=Farmer's Protest&npn=Times Of India"
+								style="text-decoration: none;">
+								<p
+									style="margin-inline-end: 4%;margin-inline-start: 4%;text-align: left !important;height: 133px;overflow: auto;color: #555555">
+									A
+									series
+									of
+									protests by farmers in India including the ones at Madhya Pradesh
+									(Mandsaur protest) and Maharashtra (Kisan long march) demand-
+									ing better prices for production of crops, loan waivers, and forest
+									rights, among others. The issue is highly active politically with a
+									lot of involvement of different politicians and political parties.</p>
+							</a>
+						</div>
+
+
+					</li>
+
+				</ul>
+			</div>
+			<div class="col-sm-6">
+				<ul class="list-group links-list" style="box-shadow: 0px 0px 6px white;width: 100%;text-align: center;">
+					<li id="B4" class="list-group-item"
+						style="background:white;color: #05386b !important;font-size:140%;border: 1px solid white; ">
+						<span style="font-family: 'Open Sans', 'serif'; text-align: center;">GST
+						</span>
+					</li>
+					<li class="list-group-item lis" style="border: 1px solid white !important;">
+						<div class="Des4">
+							<a href="../Pages/mediainfo.php?event=2&np=timesofindia&eventn=Goods and Services Tax&npn=Times Of India"
+								style="text-decoration: none;">
+								<p
+									style="margin-inline-end: 4%;margin-inline-start: 4%;text-align: left !important;height: 133px;overflow: auto;color: #555555">
+									An
+									indirect tax levied in India on the
+									sale of goods and services. It is levied at each step of the production
+									value-chain with an effort towards formalization in the industry
+									and simplification of multiple types of taxes which preceded the
+									GST regime. Since its implementation there have been intense de-
+									bates though on its complexity and problems in implementation
+									which have impacted the overall growth of the economy. </p>
+							</a>
+						</div>
+
+
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer"></div>
+
+</body>
+
+</html>

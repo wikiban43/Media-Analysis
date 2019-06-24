@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map of Districts of India</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../library/leaflet/leaflet.css">
+<script type="text/javascript" src="../../library/leaflet/leaflet.js"></script>
+<script src="../../library/leaflet/leaflet.hotline.js"></script>
+
+<script src="../../GeoJSON_Files/main.geojson"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="scripts/css/nv.d3.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="scripts/css/interlocks.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+<script src="scripts/js/nv.d3.js"></script>
+<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+<style type="text/css">
+	body {
+	    font-family: 'Roboto';
+	    /*font-size: 22px;*/
+	}
+	nav {
+		font-family: 'Montserrat', 'serif';
+		font-size: 12px;
+		overflow: auto;
+		color: #555555;
+		letter-spacing: 0.15px;
+		line-height: 1.5;
+	}
+	/*#navID{*/
+		/*background: #FFFFFF;*/
+		/*color: #0000FF;*/
+	/*}*/
+	
+	#navID ul li ul{
+		max-height:300px;/* you can change as you need it */
+		overflow:auto;/* to get scroll */
+		/*background: blue;*/
+		/*color: #0000FF;*/
+	}
+	#map { 
+		height: 400px; 
+		width: 400px;
+		margin: 10px;
+		float: left;
+	}
+	#map1 { 
+		height: 400px; 
+		width: 400px;
+		margin: 10px;
+		float: left;
+	}
+	#map2 { 
+		height: 400px; 
+		width: 400px;
+		margin: 10px;
+		float: left;
+	}
+	.info {
+	    padding: 6px 8px;
+	    font: 14px/16px Arial, Helvetica, sans-serif;
+	    background: white;
+	    background: rgba(255,255,255,0.8);
+	    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	    border-radius: 5px;
+	}
+	.info h4 {
+	    margin: 0 0 5px;
+	    color: #777;
+	}
+	.info h6 {
+	    margin: 0 0 2px;
+	    color: #777;
+	}
+	.faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+    h1 {
+    	font: 
+    	margin: auto;
+    	text-align: center;
+    }
+	.one{
+		width: 100%;
+		height: 180px;
+		color: white !important;
+		background: 	#292929;
+	}
+	.two{
+		background: #4FA543 !important;
+		width: 100%;
+		height: 70px;
+		color: white !important;
+	}
+
+
+    /*.panel-heading [data-toggle="collapse"]:after {*/
+        /*font-family: 'Glyphicons Halflings';*/
+        /*content: "\e072"; glyphicon glyphicon-chevron-righe072" "play" icon */
+        /*float: right;*/
+        /*color: #F58723;*/
+        /*font-size: 18px;*/
+        /*line-height: 22px;*/
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        /*-webkit-transform: rotate(-90deg);*/
+        /*-moz-transform: rotate(-90deg);*/
+        /*-ms-transform: rotate(-90deg);*/
+        /*-o-transform: rotate(-90deg);*/
+        /*transform: rotate(-90deg);*/
+    /*}*/
+
+    /*.panel-heading [data-toggle="collapse"].collapsed:after {*/
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        /*-webkit-transform: rotate(90deg);*/
+        /*-moz-transform: rotate(90deg);*/
+        /*-ms-transform: rotate(90deg);*/
+        /*-o-transform: rotate(90deg);*/
+        /*transform: rotate(90deg);*/
+        /*color: #454444;*/
+    }
+</style>
+<body>
+<section class="w3-container w3-center" style="max-width:2000px">
+</section> 
+
+<nav class="navbar navbar-inverse" id="navID">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Hypothesis 1<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="hypo-1-bf.html">BF</a></li>
+					<li><a href="hypo-1-fc.html">FC</a></li>
+					<li><a href="hypo-1-chh.html">CHH</a></li>
+					<li><a href="hypo-1-msl.html">MSL</a></li>
+					<li><a href="hypo-1-msw.html">MSW</a></li>
+					<li><a href="hypo-1-asset.html">ASSET</a></li>
+				</ul>
+			</li>
+			<li><a href="hypo-2.html">Hypothesis 2</a></li>
+			<li><a href="hypo-3.html">Hypothesis 3</a></li>
+			<li><a href="hypo-4.html">Hypothesis 4</a></li>
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Hypothesis 5<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="hypo-5-bf.html">BF</a></li>
+					<li><a href="hypo-5-fc.html">FC</a></li>
+					<li><a href="hypo-5-chh.html">CHH</a></li>
+					<li><a href="hypo-5-msl.html">MSL</a></li>
+					<li><a href="hypo-5-msw.html">MSW</a></li>
+					<li><a href="hypo-5-asset.html">ASSET</a></li>
+				</ul>
+			</li>
+			<li><a href="hypo-6.html">Hypothesis 6</a></li>
+			</li>
+		</ul>
+	</div>
+</nav> 
+
+<!-- <br><br><br><br> -->
+<h1>Hypothesis 1</h1>
+<center>
+<i><h4>Non-Agricultural Districts show the most change in social development indicators</h4></i>
+<h3><b>Change in Bathroom Facility</b></h3>
+</center>
+
+<table>
+	<tr>
+		<td><center><h5>High Unemployment Districts</h5></center></td>
+		<td><center><h5>Agricultural Districts</h5></center></td>	
+		<td><center><h5>Non-Agricultural Districts</h5></center></td>		
+	</tr>
+	<tr>
+	<td><div id="map">
+	<script type="text/javascript">
+		function getColor(attr, emp) {
+			if (emp == 1 && attr == 1) {
+				return 'rgb(' + [0xff, 0x00, 0].join(',') + ')';
+			}
+			if (emp == 1 && attr == 2) {
+				return 'rgb(' + [0xff, 0xff, 0].join(',') + ')';
+			}
+			if (emp == 1 && attr == 3) {
+				return 'rgb(' + [0x00, 0xff, 0].join(',') + ')';	
+			}
+		}
+
+		function style(feature) {
+	        return {
+		        fillColor: getColor(feature.properties.bf_change, feature.properties.emp_2001),
+		        weight: 0.5,
+		        opacity: 1,
+		        color: 'white',
+		        dashArray: '3',
+		        fillOpacity: 0.7
+		    };
+		}
+
+		function convert_(s) {
+			s = s.toLowerCase();
+			s = s.replace(/ /g, '_');
+			return s;
+		}
+
+		function onClick(e) {
+			var layer = e.target;
+
+			// window.location.href = 'district_pages/'+convert_(layer.feature.properties.NAME_1)+'_'+convert_(layer.feature.properties.NAME_2)+'.html';
+		}
+
+		function highlightFeature(e) {
+		    var layer = e.target;
+
+		    layer.setStyle({
+		        weight: 5,
+		        color: '#666',
+		        dashArray: '',
+		        fillOpacity: 0.7
+		    });
+
+		    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+		        layer.bringToFront();
+		    }
+		    info.update(layer.feature.properties);
+		}
+
+		function resetHighlight(e) {
+		    districts_layer.resetStyle(e.target);
+		    info.update();
+		}
+
+		function onEachFeature(feature, layer) {
+		  	layer.on({
+		        mouseover: highlightFeature,
+		        mouseout: resetHighlight,
+		        click: onClick
+		    });
+		}
+
+		function describe(emp, attr){
+			emp_dict = {1 : 'High Unemployment', 2 : 'Agricultural', 3 : 'Non-Agricultural'};
+			attr_dict = {1 : '-ve Change', 2 : 'No Change', 3 : '+ve Change'};
+			return emp_dict[emp] + '<br>' + attr_dict[attr] + ' in BF'
+		}
+
+		function toInt(n){ return Math.round(Number(n)); };
+
+		function get_salient_info(emp, attr_lvl) {
+			count = 0
+			if (attr_lvl > 0) {
+				turf.featureEach(india_districts, function (currentFeature, featureIndex) {
+					if (currentFeature.properties.emp_2001 == emp && currentFeature.properties.bf_change == attr_lvl) {
+						count += 1
+					}
+				});
+				return count;
+			}
+			else{
+				turf.featureEach(india_districts, function (currentFeature, featureIndex) {
+					if (currentFeature.properties.emp_2001 == emp) {
+						count += 1
+					}
+				});
+				return count;
+			}				
+		}
+
+		var map_var = L.map('map', {
+		    center: L.latLng(22.69, 80.97),
+		    zoom: 4
+		});
+		var info = L.control();
+		info.onAdd = function (map) {
+		    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+		    this.update();
+		    return this._div;
+		};
+
+		// method that we will use to update the control based on feature properties passed
+		info.update = function (props) {
+			this._div.innerHTML = (props ?
+				'<b>' + props.DISTRICT + ", " + props.ST_NM + '</b><br />' + describe(props.emp_2001, props.bf_change) + '<br />'
+		        : 'Hover over a district');
+		};
+
+		var districts_layer = L.geoJson(india_districts, {
+			style: style,
+			onEachFeature: onEachFeature
+		}).addTo(map_var);
+
+		info.addTo(map_var);
+
+		var legend = L.control({position: 'bottomright'});
+
+		legend.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info legend'),
+				colors = ['FF0000', 'FFFF00', '00FF00'];
+
+			for (var i = 0; i < colors.length; i++) {
+				if (i == 0) {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> -ve change </i> <br> ';
+					}
+				else if (i == colors.length-1) {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> +ve change </i> ';
+					}
+				else {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> No change  </i> <br> ';
+				}
+			}
+
+			return div;
+		};
+
+		legend.addTo(map_var);
+
+		var snippet = L.control({position: 'bottomleft'});
+
+		snippet.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info');
+
+			total = get_salient_info(1, 0)
+			div.innerHTML = '-ve Change - <b>'+ get_salient_info(1, 1) + ' (' + toInt((get_salient_info(1, 1)*100)/total) + '%)</b><br />' + 
+				'No Change - <b>'+ get_salient_info(1, 2) + ' (' + toInt((get_salient_info(1, 2)*100)/total) + '%)</b><br />' + 
+				'+ve Change - <b>'+ get_salient_info(1, 3) + ' (' + toInt((get_salient_info(1, 3)*100)/total) + '%)</b><br />' + 
+				'Total - <b>'+ get_salient_info(1, 0) + '</b><br />';
+			return div;
+		};
+
+		snippet.addTo(map_var);
+
+	</script>
+	</div></td>
+	<td><div id="map1">
+	<script type="text/javascript">
+		function getColor1(attr, emp) {
+			if (emp == 2 && attr == 1) {
+				return 'rgb(' + [0xff, 0x00, 0].join(',') + ')';
+			}
+			if (emp == 2 && attr == 2) {
+				return 'rgb(' + [0xff, 0xff, 0].join(',') + ')';
+			}
+			if (emp == 2 && attr == 3) {
+				return 'rgb(' + [0x00, 0xff, 0].join(',') + ')';	
+			}
+		}
+
+		function style(feature) {
+	        return {
+		        fillColor: getColor1(feature.properties.bf_change, feature.properties.emp_2001),
+		        weight: 0.5,
+		        opacity: 1,
+		        color: 'white',
+		        dashArray: '3',
+		        fillOpacity: 0.7
+		    };
+		}
+
+		function convert_(s) {
+			s = s.toLowerCase();
+			s = s.replace(/ /g, '_');
+			return s;
+		}
+
+		function onClick(e) {
+			var layer1 = e.target;
+
+			// window.location.href = 'district_pages/'+convert_(layer1.feature.properties.NAME_1)+'_'+convert_(layer1.feature.properties.NAME_2)+'.html';
+		}
+
+		function highlightFeature(e) {
+		    var layer1 = e.target;
+
+		    layer1.setStyle({
+		        weight: 5,
+		        color: '#666',
+		        dashArray: '',
+		        fillOpacity: 0.7
+		    });
+
+		    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+		        layer1.bringToFront();
+		    }
+		    info1.update(layer1.feature.properties);
+		}
+
+		function resetHighlight(e) {
+		    districts_layer1.resetStyle(e.target);
+		    info1.update();
+		}
+
+		function onEachFeature(feature, layer1) {
+		  	layer1.on({
+		        mouseover: highlightFeature,
+		        mouseout: resetHighlight,
+		        click: onClick
+		    });
+		}
+
+		function describe1(emp, attr){
+			emp_dict = {1 : 'High Unemployment', 2 : 'Agricultural', 3 : 'Non-Agricultural'};
+			attr_dict = {1 : '-ve Change', 2 : 'No Change', 3 : '+ve Change'};
+			return emp_dict[emp] + '<br>' + attr_dict[attr] + ' in BF'
+		}
+
+		function toInt(n){ return Math.round(Number(n)); };
+
+		var map_var = L.map('map1', {
+		    center: L.latLng(22.69, 80.97),
+		    zoom: 4
+		});
+		var info1 = L.control();
+		info1.onAdd = function (map) {
+		    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+		    this.update();
+		    return this._div;
+		};
+
+		// method that we will use to update the control based on feature properties passed
+		info1.update = function (props) {
+			this._div.innerHTML = (props ?
+				'<b>' + props.DISTRICT + ", " + props.ST_NM + '</b><br />' + describe1(props.emp_2001, props.bf_change) + '<br />'
+		        : 'Hover over a district');
+		};
+
+		var districts_layer1 = L.geoJson(india_districts, {
+			style: style,
+			onEachFeature: onEachFeature
+		}).addTo(map_var);
+
+		info1.addTo(map_var);
+
+		var legend = L.control({position: 'bottomright'});
+
+		legend.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info legend'),
+				colors = ['FF0000', 'FFFF00', '00FF00'];
+
+			for (var i = 0; i < colors.length; i++) {
+				if (i == 0) {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> -ve change </i> <br> ';
+					}
+				else if (i == colors.length-1) {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> +ve change </i> ';
+					}
+				else {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> No change  </i> <br> ';
+				}
+			}
+
+			return div;
+		};
+
+		legend.addTo(map_var);
+
+		var snippet = L.control({position: 'bottomleft'});
+
+		snippet.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info');
+
+			total = get_salient_info(2, 0)
+			div.innerHTML = '-ve Change - <b>'+ get_salient_info(2, 1) + ' (' + toInt((get_salient_info(2, 1)*100)/total) + '%)</b><br />' + 
+				'No Change - <b>'+ get_salient_info(2, 2) + ' (' + toInt((get_salient_info(2, 2)*100)/total) + '%)</b><br />' + 
+				'+ve Change - <b>'+ get_salient_info(2, 3) + ' (' + toInt((get_salient_info(2, 3)*100)/total) + '%)</b><br />' + 
+				'Total - <b>'+ get_salient_info(2, 0) + '</b><br />';
+			return div;
+		};
+
+		snippet.addTo(map_var);
+
+	</script>
+	</div></td>
+	<td><div id="map2">
+	<script type="text/javascript">
+		function getColor2(attr, emp) {
+			if (emp == 3 && attr == 1) {
+				return 'rgb(' + [0xff, 0x00, 0].join(',') + ')';
+			}
+			if (emp == 3 && attr == 2) {
+				return 'rgb(' + [0xff, 0xff, 0].join(',') + ')';
+			}
+			if (emp == 3 && attr == 3) {
+				return 'rgb(' + [0x00, 0xff, 0].join(',') + ')';	
+			}
+		}
+
+		function style(feature) {
+	        return {
+		        fillColor: getColor2(feature.properties.bf_change, feature.properties.emp_2001),
+		        weight: 0.5,
+		        opacity: 1,
+		        color: 'white',
+		        dashArray: '3',
+		        fillOpacity: 0.7
+		    };
+		}
+
+		function convert_(s) {
+			s = s.toLowerCase();
+			s = s.replace(/ /g, '_');
+			return s;
+		}
+
+		function onClick(e) {
+			var layer2 = e.target;
+
+			// window.location.href = 'district_pages/'+convert_(layer2.feature.properties.NAME_1)+'_'+convert_(layer2.feature.properties.NAME_2)+'.html';
+		}
+
+		function highlightFeature(e) {
+		    var layer2 = e.target;
+
+		    layer2.setStyle({
+		        weight: 5,
+		        color: '#666',
+		        dashArray: '',
+		        fillOpacity: 0.7
+		    });
+
+		    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+		        layer2.bringToFront();
+		    }
+		    info2.update(layer2.feature.properties);
+		}
+
+		function resetHighlight(e) {
+		    districts_layer2.resetStyle(e.target);
+		    info2.update();
+		}
+
+		function onEachFeature(feature, layer2) {
+		  	layer2.on({
+		        mouseover: highlightFeature,
+		        mouseout: resetHighlight,
+		        click: onClick
+		    });
+		}
+
+		function describe2(emp, attr){
+			emp_dict = {1 : 'High Unemployment', 2 : 'Agricultural', 3 : 'Non-Agricultural'};
+			attr_dict = {1 : '-ve Change', 2 : 'No Change', 3 : '+ve Change'};
+			return emp_dict[emp] + '<br>' + attr_dict[attr] + ' in BF'
+		}
+
+		function toInt(n){ return Math.round(Number(n)); };
+
+		var map_var = L.map('map2', {
+		    center: L.latLng(22.69, 80.97),
+		    zoom: 4
+		});
+		var info2 = L.control();
+		info2.onAdd = function (map) {
+		    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+		    this.update();
+		    return this._div;
+		};
+
+		// method that we will use to update the control based on feature properties passed
+		info2.update = function (props) {
+			this._div.innerHTML = (props ?
+				'<b>' + props.DISTRICT + ", " + props.ST_NM + '</b><br />' + describe2(props.emp_2001, props.bf_change) + '<br />'
+		        : 'Hover over a district');
+		};
+
+		var districts_layer2 = L.geoJson(india_districts, {
+			style: style,
+			onEachFeature: onEachFeature
+		}).addTo(map_var);
+
+		info2.addTo(map_var);
+
+		var legend = L.control({position: 'bottomright'});
+
+		legend.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info legend'),
+				colors = ['FF0000', 'FFFF00', '00FF00'];
+
+			for (var i = 0; i < colors.length; i++) {
+				if (i == 0) {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> -ve change </i> <br> ';
+					}
+				else if (i == colors.length-1) {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> +ve change </i> ';
+					}
+				else {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> No change  </i> <br> ';
+				}
+			}
+
+			return div;
+		};
+
+		legend.addTo(map_var);
+
+		var snippet = L.control({position: 'bottomleft'});
+
+		snippet.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info');
+
+			total = get_salient_info(3, 0)
+			div.innerHTML = '-ve Change - <b>'+ get_salient_info(3, 1) + ' (' + toInt((get_salient_info(3, 1)*100)/total) + '%)</b><br />' + 
+				'No Change - <b>'+ get_salient_info(3, 2) + ' (' + toInt((get_salient_info(3, 2)*100)/total) + '%)</b><br />' + 
+				'+ve Change - <b>'+ get_salient_info(3, 3) + ' (' + toInt((get_salient_info(3, 3)*100)/total) + '%)</b><br />' + 
+				'Total - <b>'+ get_salient_info(3, 0) + '</b><br />';
+			return div;
+		};
+
+		snippet.addTo(map_var);
+
+	</script>
+	</div></td>
+	</tr>
+</table>
+<!-- <footer class="foot">
+	<div class="one"></div>
+	<div class="two">
+		<br>
+		<p style="text-align:center;padding:8px;">© Giant Economy Monitor & ICDT. All Rights Reserved.</p>
+	</div>
+</footer> -->
+
+</body>
+</html>

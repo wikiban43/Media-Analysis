@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>GEM</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+	<style>
+		body {
+			font-family: 'Open Sans', 'serif';
+			font-size: 14px;
+			overflow: auto;
+
+			color: #555555;
+			letter-spacing: 0.25px;
+			line-height: 1.5;
+		}
+
+		.loader {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background: url('../Images/page-loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
+		}
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.min.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+		$(function () {
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+		});
+	</script>
+</head>
+
+<body>
+	<div class="loader"></div>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$(".loader").fadeOut("slow");
+		})
+	</script>
+
+	<div id="header"></div>
+	<div style="height: 100%;">
+		<div style="bottom: 100px;" class="container info">
+			<br>
+			<div>
+				<h1 class="text-center">GIANT ECONOMY MONITOR</h1>
+			</div>
+
+			<p style="margin-inline-end: 10%;margin-inline-start: 10%;padding: 5px 5px 5px 5px;font-size: 115%;">We are working
+				towards a vision to build a data driven economy monitoring engine that will bring together economic time-series,
+				longitudinal satellite data, and media reports, to improve the awareness of citizens on how economic policies get
+				shaped,
+				their effects, and give an overall state of the socio-economic lives of people as a result of policies and actions
+				implemented
+				in the Indian democratic framework. Our aim is to build a first version of GEM (Giant Economy Monitor) in India.
+			</p>
+
+			<p style="margin-inline-end: 10%;margin-inline-start: 10%;padding: 5px 5px 5px 5px;font-size: 115%;">How economies
+				work is poorly understood by most citizens – how corporate and political interlocks shape industrial policies
+				or resource allocation, how political alignment of elected representatives affects the growth of their
+				constituencies,
+				how local and national inequality is changing over time, the impact of government welfare schemes, level of
+				policing
+				of trade mal-practices such as commodity hoarding or price manipulation, how media ownership influences its bias,
+				whether
+				social media helps level mass media bias or amplifies echo chambers, are aspects that if understood by citizens can
+				help
+				strengthen the democratic frameworks to make the world a better place for everybody. Representing the functioning
+				of
+				the economy in simple terms in hard – data collection from many sources, data mining to detect relationships based
+				on
+				state of the art in economic/financial/political models, and making it accessible to people in contextual ways – is
+				what
+				we aim to achieve.
+			</p>
+		</div>
+
+	</div>
+
+	<div id="footer"></div>
+
+</body>
+
+</html>

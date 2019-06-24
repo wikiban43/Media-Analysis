@@ -1,0 +1,11 @@
+<b>Examples in Aadhar depicting tweet sentiment.</b> 
+<br>
+<br><b>Positive</b>
+<br><b>1.</b> "@DVSBJP Thanks to Nandan Nilekani for the wonderful innovative idea in planning and implementing Aadhar. Earlier many people were opposing this but today everyone realising the importance of Aadhar."<br>
+<b>2.</b> "Tedious procedures and delay are things of the past. IPPB facilitates totally paperless and easy way of opening of account. All you need is aadhar Card number and biometrics to get going! @NarendraModi @Manojsinhabjp #IndiaPostPaymentsBank",<br>
+<br>
+<b>Negative</b><br>
+<b>1.</b> "Aadhar card is just like #pappu  Crores spent to make it purposeful but still useless .",
+<br><b>2.</b> "@rajeev_mp Aadhar is a crime against the nation by UPA and Nilekeni who is going to contest election.",
+
+

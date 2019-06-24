@@ -1,0 +1,9 @@
+<b>Examples in GST depicting tweet sentiment.</b><br> 
+<br>
+<b>Positive</b>
+<br><b>1.</b> "Big win for women across the nation!! Thank you @narendramodi ji for reducing GST on sanitary napkins to 0% (100% exemption) and ensuring good health &amp; hygiene for women!! @PiyushGoyal "
+<br><b>2.</b> "RT @narendramodi: GST has brought growth, simplicity and transparency. It is Boosting formalisation.Enhancing productivity.Furthering ‘Ease of Doing Business.Benefitting small and medium enterprises. #GSTForNewIndia.
+<br>
+<b>Negative</b>
+<br><b>1.</b> "#GSTForNewIndia Modi is praising GST actually is an exercise in self adulation, when he was Gujarat CM he had bitterly opposed it and also BJP as opposition, they had delayed GST for few years and introduced a flawed GST"
+<br><b>2.</b> "RT @MyFellowIndians: So after RUINING the economy for 2 years with #DeMonetisation &amp; the WORST possible implementation of #GST, the economy…",

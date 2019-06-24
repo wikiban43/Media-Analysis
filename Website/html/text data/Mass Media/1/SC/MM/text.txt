@@ -1,0 +1,11 @@
+<b>Examples on Demonetisation articles in newspapers depicting positive and negative sentiment.</b><br>
+<br>
+<b>Positive</b><br>
+<b>1.</b> "PUNE: The Pune railway administration has initiated steps to install card swipe machines at the booking counters and at unreserved ticket selling windows.About 112 point of sale (PoS) termionals will be installed in the next few days at various locations across the division that sell journey tickets.Pune railway administration officials said they have chalked out an plan to ensure that commuters do not face issues while booking tickets.Authorities said PoS machines will be used to book all type of tickets.Now everyone is going for cashless transactions. We have identified locations with high transactions and are providing PoS machines at these spots on priority. Trial runs of the machines were completed successfully recently..... "
+<br>
+<b>2.</b> "KANPUR: With drop in donations after demonetisation, temples in the city are now accepting donations through mobile wallet service providers.Junglee Devi Temple in Kidwainagar has started digital payment service through which devotees......."<br>
+
+<b>Negative</b><br>
+<b>1. </b>"JAIPUR: A head cashier working at the State Bank of Bikaner and Jaipur 's (SBBJ) Dausa branch was suspended on Monday after he was found exchanging scrapped notes of Rs 500 and Rs 1,000.According to cops, the SBBJ's vigilance team found widespread irregularities in the working of its head cashier Yogendra Meena.Primary investigation revealed that Meena had exchanged about Rs 1 crore using three fake ID cards..."<br>
+
+<b>2.</b> "HYDERABAD: It has become a herculean task for over 1000 gas agencies to promote digital payment post-demonetisation.The system is not ready yet and customers are also unwilling to shift to digital transaction. Three oil companies in the city are struggling either due to lack of enough swiping machines or payment gateways.The Bharat Petroleum Company (BPC) has already made arrangements for online payments...."<br>
