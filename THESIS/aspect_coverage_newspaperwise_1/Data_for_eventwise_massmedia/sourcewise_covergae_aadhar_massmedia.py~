@@ -1,0 +1,42 @@
+import sys
+import sqlite3
+import time
+import itertools
+import numpy as np
+from pymongo import MongoClient
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
+#CONNECT TO MONGO DATABASE
+
+aadhar_article_data = np.loadtxt("aadhar_article_data_20.csv",dtype=str,delimiter=";")
+category_list = aadhar_article_data[:,0]
+url_list = aadhar_article_data[:,9]
+senti_list = aadhar_article_data[:,6]
+word_count = aadhar_article_data[:,2]
+
+newspaper_list = ['thehindu','hindustantimes','timesofindia','telegraph','newindianexpress','indianexpress','deccanherald']
+fp1=open('newspaper_wise_count_category_massmedia_aadhar','w')
+fp2=open('newspaper_wise_agg_sent_massmedia_aadhar','w')
+
+array_to_write_cat = np.zeros((7,21),dtype=int)
+array_to_write_word = np.zeros((7,21),dtype=int)
+array_to_write_sent = np.zeros((7,21),dtype=float)
+
+for i in range(len(url_list)):
+	print('Done for '+str(i)+' url')
+	for j in range(len(newspaper_list)):
+		if(newspaper_list[j] in url_list[i]):
+			array_to_write_cat[j][int(category_list[i])]+=1
+			array_to_write_word[j][int(category_list[i])]+=int(word_count[i])
+			array_to_write_sent[j][int(category_list[i])]+=float(senti_list[i])
+			break
+			
+for i in range(len(newspaper_list)):
+	fp1.write(str(newspaper_list[i])+'\n')
+	fp2.write(str(newspaper_list[i])+'\n')
+	for j in range(21):
+		fp1.write(str(array_to_write_cat[i][j])+';'+str(array_to_write_word[i][j])+'\n')
+		fp2.write(str(array_to_write_sent[i][j])+'\n')
+
+fp1.close()
+fp2.close()

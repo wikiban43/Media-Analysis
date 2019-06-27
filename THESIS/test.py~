@@ -1,0 +1,27 @@
+import numpy as np
+
+newspaper_list = ['thehindu','hindustan','timesofindia','telegraph','newindianexpress','indianexpress','deccanherald']
+data_file = ['aadhar_article_data_20.csv','demon_article_data_20.csv','gst_article_data_20.csv','farmers_article_data_20.csv']
+
+url_lis = []
+
+for i in range(4):
+	url_lis=[]
+	data = np.loadtxt(data_file[i],dtype=str,delimiter=';')
+	output = np.zeros((7,2),dtype=float)
+	for doc in data:
+		url = doc[9]
+		senti=doc[6]
+		if url not in url_lis:
+			url_lis.append(url)
+			for j in range(7):
+				if newspaper_list[j] in url:
+					output[j][0]+=1
+					output[j][1]+=float(senti)
+					break
+				
+	for j in range(7):
+		print(str(output[j][0])+'	'+str(output[j][1]/output[j][0]))
+		
+	print('\n\n')
+		
